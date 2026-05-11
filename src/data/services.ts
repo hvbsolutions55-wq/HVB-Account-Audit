@@ -1,0 +1,58 @@
+export const services = [
+  {
+    id: 1,
+    title: "Audit & Assurance",
+    description: "Comprehensive audit services providing assurance on financial statements and internal controls.",
+    icon: "ShieldCheck",
+    details: [
+      "Statutory audits for companies",
+      "Internal audit and control reviews",
+      "Risk assessment and management",
+      "Compliance and regulatory audits",
+      "Special purpose audits",
+    ],
+    price: "From £1,500",
+  },
+  {
+    id: 2,
+    title: "Tax Consulting",
+    description: "Expert tax planning and compliance services to optimize your tax position.",
+    icon: "TrendingUp",
+    details: [
+      "Corporate tax planning",
+      "Personal tax advice",
+      "VAT planning and compliance",
+      "International tax services",
+      "Tax dispute resolution",
+    ],
+    price: "From £800",
+  },
+  {
+    id: 3,
+    title: "Financial Advisory",
+    description: "Strategic financial guidance to help businesses grow and succeed.",
+    icon: "PieChart",
+    details: [
+      "Financial planning and analysis",
+      "Investment advisory",
+      "Mergers and acquisitions support",
+      "Business valuation",
+      "Financial restructuring",
+    ],
+    price: "From £1,200",
+  },
+  {
+    id: 4,
+    title: "Business Advisory",
+    description: "Comprehensive business consulting to drive operational excellence.",
+    icon: "Briefcase",
+    details: [
+      "Business strategy development",
+      "Process improvement",
+      "Technology consulting",
+      "Change management",
+      "Performance optimization",
+    ],
+    price: "From £1,000",
+  },
+];
