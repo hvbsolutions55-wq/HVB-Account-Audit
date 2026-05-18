@@ -49,34 +49,43 @@
 }
 
 :root {
-  /* Professional blue color scheme for accounting firm */
+  /* Navy Blue Theme */
   --background: oklch(1 0 0);
   --foreground: oklch(0.145 0 0);
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.145 0 0);
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.145 0 0);
-  --primary: oklch(0.45 0.15 250); /* Professional blue */
+
+  /* Primary - Navy Blue */
+  --primary: oklch(0.3 0.05 260);
   --primary-foreground: oklch(0.985 0 0);
-  --secondary: oklch(0.92 0.02 250); /* Light blue-gray */
-  --secondary-foreground: oklch(0.25 0.05 250);
-  --muted: oklch(0.96 0.01 250);
-  --muted-foreground: oklch(0.5 0.02 250);
-  --accent: oklch(0.88 0.08 250);
-  --accent-foreground: oklch(0.25 0.05 250);
+
+  /* Secondary - Light Navy */
+  --secondary: oklch(0.95 0.02 260);
+  --secondary-foreground: oklch(0.25 0.05 260);
+
+  --muted: oklch(0.96 0.01 260);
+  --muted-foreground: oklch(0.5 0.02 260);
+  --accent: oklch(0.88 0.08 260);
+  --accent-foreground: oklch(0.25 0.05 260);
+
   --destructive: oklch(0.577 0.245 27.325);
-  --border: oklch(0.88 0.01 250);
-  --input: oklch(0.88 0.01 250);
-  --ring: oklch(0.45 0.15 250);
-  --chart-1: oklch(0.45 0.15 250);
-  --chart-2: oklch(0.6 0.12 250);
-  --chart-3: oklch(0.75 0.08 250);
-  --chart-4: oklch(0.85 0.04 250);
-  --chart-5: oklch(0.95 0.01 250);
+  --border: oklch(0.88 0.01 260);
+  --input: oklch(0.88 0.01 260);
+  --ring: oklch(0.3 0.05 260);
+
+  --chart-1: oklch(0.3 0.05 260);
+  --chart-2: oklch(0.4 0.04 260);
+  --chart-3: oklch(0.5 0.03 260);
+  --chart-4: oklch(0.6 0.02 260);
+  --chart-5: oklch(0.7 0.01 260);
+
   --radius: 0.5rem;
+
   --sidebar: oklch(0.985 0 0);
   --sidebar-foreground: oklch(0.145 0 0);
-  --sidebar-primary: oklch(0.45 0.15 250);
+  --sidebar-primary: oklch(0.3 0.05 260);
   --sidebar-primary-foreground: oklch(0.985 0 0);
   --sidebar-accent: oklch(0.96 0 0);
   --sidebar-accent-foreground: oklch(0.205 0 0);
@@ -85,37 +94,41 @@
 }
 
 .dark {
-  --background: oklch(0.12 0.02 250);
+  --background: oklch(0.12 0.02 260);
   --foreground: oklch(0.98 0.01 250);
-  --card: oklch(0.18 0.03 250);
+  --card: oklch(0.18 0.03 260);
   --card-foreground: oklch(0.98 0.01 250);
-  --popover: oklch(0.18 0.03 250);
+  --popover: oklch(0.18 0.03 260);
   --popover-foreground: oklch(0.98 0.01 250);
-  --primary: oklch(0.6 0.15 250);
+
+  --primary: oklch(0.5 0.05 260);
   --primary-foreground: oklch(0.98 0.01 250);
-  --secondary: oklch(0.25 0.05 250);
+  --secondary: oklch(0.25 0.05 260);
   --secondary-foreground: oklch(0.98 0.01 250);
-  --muted: oklch(0.25 0.03 250);
-  --muted-foreground: oklch(0.65 0.02 250);
-  --accent: oklch(0.35 0.08 250);
+  --muted: oklch(0.25 0.03 260);
+  --muted-foreground: oklch(0.65 0.02 260);
+  --accent: oklch(0.35 0.08 260);
   --accent-foreground: oklch(0.98 0.01 250);
+
   --destructive: oklch(0.704 0.191 22.216);
-  --border: oklch(0.3 0.05 250);
-  --input: oklch(0.3 0.05 250);
-  --ring: oklch(0.6 0.15 250);
-  --chart-1: oklch(0.6 0.15 250);
-  --chart-2: oklch(0.5 0.12 250);
-  --chart-3: oklch(0.4 0.08 250);
-  --chart-4: oklch(0.3 0.04 250);
-  --chart-5: oklch(0.2 0.02 250);
-  --sidebar: oklch(0.18 0.03 250);
+  --border: oklch(0.3 0.05 260);
+  --input: oklch(0.3 0.05 260);
+  --ring: oklch(0.5 0.05 260);
+
+  --chart-1: oklch(0.5 0.05 260);
+  --chart-2: oklch(0.4 0.04 260);
+  --chart-3: oklch(0.3 0.03 260);
+  --chart-4: oklch(0.2 0.02 260);
+  --chart-5: oklch(0.15 0.01 260);
+
+  --sidebar: oklch(0.18 0.03 260);
   --sidebar-foreground: oklch(0.98 0.01 250);
-  --sidebar-primary: oklch(0.6 0.15 250);
+  --sidebar-primary: oklch(0.5 0.05 260);
   --sidebar-primary-foreground: oklch(0.98 0.01 250);
-  --sidebar-accent: oklch(0.25 0.05 250);
+  --sidebar-accent: oklch(0.25 0.05 260);
   --sidebar-accent-foreground: oklch(0.98 0.01 250);
-  --sidebar-border: oklch(0.3 0.05 250);
-  --sidebar-ring: oklch(0.6 0.15 250);
+  --sidebar-border: oklch(0.3 0.05 260);
+  --sidebar-ring: oklch(0.5 0.05 260);
 }
 
 @layer base {
@@ -129,3 +142,53 @@
     @apply font-sans;
   }
 }
+
+/* Fix for lucide-react icons */
+svg {
+  color: inherit !important;
+}
+
+/* Navy Blue Custom Colors */
+.bg-navy-50 { background-color: oklch(0.98 0.01 260); }
+.bg-navy-100 { background-color: oklch(0.95 0.02 260); }
+.bg-navy-200 { background-color: oklch(0.90 0.03 260); }
+.bg-navy-300 { background-color: oklch(0.80 0.04 260); }
+.bg-navy-400 { background-color: oklch(0.65 0.05 260); }
+.bg-navy-500 { background-color: oklch(0.50 0.06 260); }
+.bg-navy-600 { background-color: oklch(0.40 0.07 260); }
+.bg-navy-700 { background-color: oklch(0.30 0.08 260); }
+.bg-navy-800 { background-color: oklch(0.22 0.09 260); }
+.bg-navy-900 { background-color: oklch(0.15 0.10 260); }
+
+.text-navy-50 { color: oklch(0.98 0.01 260); }
+.text-navy-100 { color: oklch(0.95 0.02 260); }
+.text-navy-200 { color: oklch(0.90 0.03 260); }
+.text-navy-300 { color: oklch(0.80 0.04 260); }
+.text-navy-400 { color: oklch(0.65 0.05 260); }
+.text-navy-500 { color: oklch(0.50 0.06 260); }
+.text-navy-600 { color: oklch(0.40 0.07 260); }
+.text-navy-700 { color: oklch(0.30 0.08 260); }
+.text-navy-800 { color: oklch(0.22 0.09 260); }
+.text-navy-900 { color: oklch(0.15 0.10 260); }
+
+.from-navy-50 { --tw-gradient-from: oklch(0.98 0.01 260); }
+.from-navy-100 { --tw-gradient-from: oklch(0.95 0.02 260); }
+.from-navy-200 { --tw-gradient-from: oklch(0.90 0.03 260); }
+.from-navy-300 { --tw-gradient-from: oklch(0.80 0.04 260); }
+.from-navy-400 { --tw-gradient-from: oklch(0.65 0.05 260); }
+.from-navy-500 { --tw-gradient-from: oklch(0.50 0.06 260); }
+.from-navy-600 { --tw-gradient-from: oklch(0.40 0.07 260); }
+.from-navy-700 { --tw-gradient-from: oklch(0.30 0.08 260); }
+.from-navy-800 { --tw-gradient-from: oklch(0.22 0.09 260); }
+.from-navy-900 { --tw-gradient-from: oklch(0.15 0.10 260); }
+
+.to-navy-50 { --tw-gradient-to: oklch(0.98 0.01 260); }
+.to-navy-100 { --tw-gradient-to: oklch(0.95 0.02 260); }
+.to-navy-200 { --tw-gradient-to: oklch(0.90 0.03 260); }
+.to-navy-300 { --tw-gradient-to: oklch(0.80 0.04 260); }
+.to-navy-400 { --tw-gradient-to: oklch(0.65 0.05 260); }
+.to-navy-500 { --tw-gradient-to: oklch(0.50 0.06 260); }
+.to-navy-600 { --tw-gradient-to: oklch(0.40 0.07 260); }
+.to-navy-700 { --tw-gradient-to: oklch(0.30 0.08 260); }
+.to-navy-800 { --tw-gradient-to: oklch(0.22 0.09 260); }
+.to-navy-900 { --tw-gradient-to: oklch(0.15 0.10 260); }

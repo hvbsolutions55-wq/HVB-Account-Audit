@@ -1,7 +1,7 @@
 "use client";
 
-import { useState } from "react";
-import { Mail, Phone, MapPin, Clock, CheckCircle2, Loader2 } from "lucide-react";
+import { useState, useCallback } from "react";
+import { Mail, Phone, MapPin, Clock, CheckCircle2, Loader2, AlertCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -10,8 +10,23 @@ import { Navigation } from "@/components/navigation";
 import { Footer } from "@/components/footer";
 import { services } from "@/data/services";
 
+const FORMSPREE_ENDPOINT = process.env.NEXT_PUBLIC_FORMSPREE_ENDPOINT || "";
+
+if (!FORMSPREE_ENDPOINT) {
+  console.warn("NEXT_PUBLIC_FORMSPREE_ENDPOINT is not set in environment variables");
+}
+
+type FormData = {
+  name: string;
+  email: string;
+  phone: string;
+  company: string;
+  service: string;
+  message: string;
+};
+
 export default function ContactPage() {
-  const [formData, setFormData] = useState({
+  const [formData, setFormData] = useState<FormData>({
     name: "",
     email: "",
     phone: "",
@@ -21,31 +36,97 @@ export default function ContactPage() {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const validateForm = useCallback((): boolean => {
+    // Name validation - required
+    if (!formData.name.trim()) {
+      setError("Please enter your full name.");
+      return false;
+    }
+
+    // Email validation - required and format
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!formData.email.trim()) {
+      setError("Please enter your email address.");
+      return false;
+    }
+    if (!emailRegex.test(formData.email)) {
+      setError("Please enter a valid email address.");
+      return false;
+    }
+
+    // Message validation - required
+    if (!formData.message.trim()) {
+      setError("Please enter your message.");
+      return false;
+    }
+
+    return true;
+  }, [formData.name, formData.email, formData.message]);
+
+  const handleSubmit = async (e: { preventDefault: () => void }) => {
     e.preventDefault();
+    setError(null);
+
+    // Validate form
+    if (!validateForm()) {
+      return;
+    }
+
     setIsSubmitting(true);
-    // Simulate form submission
-    await new Promise((resolve) => setTimeout(resolve, 1500));
-    setIsSubmitting(false);
-    setIsSuccess(true);
-    setFormData({
-      name: "",
-      email: "",
-      phone: "",
-      company: "",
-      service: "",
-      message: "",
-    });
-    setTimeout(() => setIsSuccess(false), 5000);
+
+    try {
+      const response = await fetch(FORMSPREE_ENDPOINT, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone,
+          company: formData.company,
+          service: formData.service,
+          message: formData.message,
+        }),
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        setIsSuccess(true);
+        setError(null);
+        // Reset form after successful submission
+        setFormData({
+          name: "",
+          email: "",
+          phone: "",
+          company: "",
+          service: "",
+          message: "",
+        });
+      } else {
+        throw new Error(data.error || "Submission failed. Please try again.");
+      }
+    } catch (err) {
+      setError(err instanceof Error ? err.message : "Something went wrong. Please try again.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
-    setFormData({
-      ...formData,
+  const handleChange = useCallback((e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+    setFormData((prev) => ({
+      ...prev,
       [e.target.name]: e.target.value,
-    });
-  };
+    }));
+    // Clear error when user starts typing
+    if (error) {
+      setError(null);
+    }
+  }, [error]);
 
   return (
     <div className="flex min-h-screen flex-col">
@@ -56,7 +137,7 @@ export default function ContactPage() {
         <section className="bg-gradient-to-br from-primary/10 via-white to-secondary/10 py-20">
           <div className="container px-4 sm:px-6 lg:px-8">
             <div className="max-w-3xl">
-              <h1 className="text-4xl font-bold tracking-tight sm:text-5xl mb-6">Contact Us</h1>
+              <h1 className="text-4xl font-bold tracking-tight sm:text-5xl mb-6">Contact HVB Solutions</h1>
               <p className="text-lg text-muted-foreground">
                 Get in touch with our expert team. We're here to help with all your accounting and auditing needs.
               </p>
@@ -70,11 +151,17 @@ export default function ContactPage() {
             <div className="grid lg:grid-cols-2 gap-12">
               {/* Contact Form */}
               <div>
-                <h2 className="text-2xl font-bold mb-6">Send us a Message</h2>
+                <h2 className="text-2xl font-bold mb-6">Schedule a Free Consultation</h2>
                 {isSuccess && (
-                  <div className="mb-6 p-4 bg-green-50 border border-green-200 rounded-lg flex items-center gap-3 text-green-800">
+                  <div className="mb-6 p-4 bg-green-50 border border-green-200 rounded-lg flex items-center gap-3 text-green-800" role="alert">
                     <CheckCircle2 className="h-5 w-5" />
-                    <span>Thank you! We'll be in touch within 24 hours.</span>
+                    <span>Your consultation request has been sent successfully.</span>
+                  </div>
+                )}
+                {error && (
+                  <div className="mb-6 p-4 bg-red-50 border border-red-200 rounded-lg flex items-center gap-3 text-red-800" role="alert">
+                    <AlertCircle className="h-5 w-5" />
+                    <span>{error}</span>
                   </div>
                 )}
                 <form onSubmit={handleSubmit} className="space-y-6">
@@ -214,8 +301,8 @@ export default function ContactPage() {
                       </div>
                       <div>
                         <div className="font-medium">Email</div>
-                        <a href="mailto:info@accountsaudit.com" className="text-sm text-primary hover:underline">
-                          info@accountsaudit.com
+                        <a href="mailto:info@hvb-solutions.com" className="text-sm text-primary hover:underline">
+                          info@hvb-solutions.com
                         </a>
                         <div className="text-xs text-muted-foreground mt-1">We respond within 24 hours</div>
                       </div>

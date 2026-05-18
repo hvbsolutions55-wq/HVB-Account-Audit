@@ -20,7 +20,7 @@ export default function ServicesPage() {
 
       <main className="flex-1">
         {/* Header */}
-        <section className="bg-gradient-to-br from-primary/10 via-white to-secondary/10 py-20">
+        <section id="services-header" className="bg-gradient-to-br from-primary/10 via-white to-secondary/10 py-20">
           <div className="container px-4 sm:px-6 lg:px-8">
             <div className="max-w-3xl">
               <h1 className="text-4xl font-bold tracking-tight sm:text-5xl mb-6">Our Services</h1>
@@ -35,42 +35,45 @@ export default function ServicesPage() {
         <section className="py-20 bg-white">
           <div className="container px-4 sm:px-6 lg:px-8">
             <div className="grid md:grid-cols-2 gap-8 lg:gap-12">
-              {services.map((service) => {
+              {services.map((service, index) => {
                 const Icon = serviceIcons[service.icon];
+                const sectionId = index === 0 ? "audit" : index === 1 ? "tax" : index === 2 ? "financial" : "business";
                 return (
-                  <Card key={service.id} className="group hover:shadow-xl transition-all duration-300 border-primary/10 hover:border-primary/30 overflow-hidden">
-                    <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-bl from-primary/5 to-transparent rounded-bl-full"></div>
-                    <CardHeader>
-                      <div className="mb-4 inline-flex h-14 w-14 items-center justify-center rounded-xl bg-primary/10 group-hover:bg-primary/20 transition-colors">
-                        <Icon className="h-7 w-7 text-primary" />
-                      </div>
-                      <CardTitle className="text-2xl">{service.title}</CardTitle>
-                      <CardDescription className="text-base">{service.description}</CardDescription>
-                    </CardHeader>
-                    <CardContent className="space-y-6">
-                      <ul className="space-y-3">
-                        {service.details.map((detail, index) => (
-                          <li key={index} className="flex items-start gap-3">
-                            <CheckCircle2 className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
-                            <span className="text-sm text-muted-foreground">{detail}</span>
-                          </li>
-                        ))}
-                      </ul>
-                      <div className="pt-4 border-t">
-                        <div className="flex items-center justify-between">
-                          <div>
-                            <div className="text-xs text-muted-foreground uppercase tracking-wide">Starting from</div>
-                            <div className="text-2xl font-bold text-primary">{service.price}</div>
-                          </div>
-                          <Link href="/contact">
-                            <Button variant="outline" className="group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
-                              Get Quote <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
-                            </Button>
-                          </Link>
+                  <div key={service.id} id={sectionId} className="scroll-mt-24">
+                    <Card className="group hover:shadow-xl transition-all duration-300 border-primary/10 hover:border-primary/30 overflow-hidden">
+                      <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-bl from-primary/5 to-transparent rounded-bl-full"></div>
+                      <CardHeader>
+                        <div className="mb-4 inline-flex h-14 w-14 items-center justify-center rounded-xl bg-primary/10 group-hover:bg-primary/20 transition-colors">
+                          <Icon className="h-7 w-7 text-primary" />
                         </div>
-                      </div>
-                    </CardContent>
-                  </Card>
+                        <CardTitle className="text-2xl">{service.title}</CardTitle>
+                        <CardDescription className="text-base">{service.description}</CardDescription>
+                      </CardHeader>
+                      <CardContent className="space-y-6">
+                        <ul className="space-y-3">
+                          {service.details.map((detail, idx) => (
+                            <li key={idx} className="flex items-start gap-3">
+                              <CheckCircle2 className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
+                              <span className="text-sm text-muted-foreground">{detail}</span>
+                            </li>
+                          ))}
+                        </ul>
+                        <div className="pt-4 border-t">
+                          <div className="flex items-center justify-between">
+                            <div>
+                              <div className="text-xs text-muted-foreground uppercase tracking-wide">Starting from</div>
+                              <div className="text-2xl font-bold text-primary">{service.price}</div>
+                            </div>
+                            <Link href="/contact">
+                              <Button variant="outline" className="group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
+                                Get Quote <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                              </Button>
+                            </Link>
+                          </div>
+                        </div>
+                      </CardContent>
+                    </Card>
+                  </div>
                 );
               })}
             </div>
@@ -90,7 +93,7 @@ export default function ServicesPage() {
                 </p>
                 <Link href="/contact">
                   <Button size="lg" variant="secondary" className="bg-white text-primary hover:bg-white/90">
-                    Contact Us <ArrowRight className="ml-2 h-4 w-4" />
+                    Free Consultation <ArrowRight className="ml-2 h-4 w-4" />
                   </Button>
                 </Link>
               </CardContent>

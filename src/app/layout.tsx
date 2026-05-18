@@ -8,13 +8,13 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Accounts Audit | Professional Accounting & Audit Services",
-  description: "Expert accounting and auditing services for businesses of all sizes. Audit & Assurance, Tax Consulting, Financial Advisory, and Business Advisory. Trusted by 500+ businesses.",
-  keywords: ["accounting", "audit", "tax consulting", "financial advisory", "business advisory", "CPA", "accountant"],
-  authors: [{ name: "Accounts Audit" }],
+  title: "HVB Solutions | Global Accounting, Finance & Audit Services",
+  description: "Global Professional Accounting, Finance & Audit Services. Fractional CFO, Audit and Accounting Support designed to help you achieve your financial goals. 5+ years of excellence.",
+  keywords: ["HVB Solutions", "accounting", "audit", "tax consulting", "financial advisory", "business advisory", "fractional CFO", "CPA"],
+  authors: [{ name: "HVB Solutions" }],
   openGraph: {
-    title: "Accounts Audit | Professional Accounting & Audit Services",
-    description: "Expert accounting and auditing services for businesses of all sizes.",
+    title: "HVB Solutions | Global Accounting, Finance & Audit Services",
+    description: "Professional accounting and auditing services designed to help you achieve your financial goals.",
     type: "website",
   },
 };

@@ -16,7 +16,7 @@ export default function AboutPage() {
         <section className="bg-gradient-to-br from-primary/10 via-white to-secondary/10 py-20">
           <div className="container px-4 sm:px-6 lg:px-8">
             <div className="max-w-3xl">
-              <h1 className="text-4xl font-bold tracking-tight sm:text-5xl mb-6">About Us</h1>
+              <h1 className="text-4xl font-bold tracking-tight sm:text-5xl mb-6">About HVB Solutions</h1>
               <p className="text-lg text-muted-foreground">
                 Professional accounting and auditing services built on trust, expertise, and a commitment to excellence.
               </p>
@@ -45,10 +45,10 @@ export default function AboutPage() {
               <h2 className="text-3xl font-bold tracking-tight sm:text-4xl mb-8 text-center">Our Story</h2>
               <div className="prose prose-lg max-w-none text-muted-foreground space-y-6">
                 <p>
-                  Founded in 2008, Accounts Audit has grown from a small boutique firm to one of the UK's most trusted accounting and auditing partners. Our journey began with a simple mission: to provide businesses of all sizes with the same level of financial expertise typically reserved for large corporations.
+                  HVB Solutions was founded with a simple mission: to provide businesses of all sizes with the same level of financial expertise typically reserved for large corporations. Our journey began with a commitment to excellence and a passion for helping businesses achieve their financial goals.
                 </p>
                 <p>
-                  Over the past 15+ years, we've helped over 500 businesses across various industries achieve their financial goals. Our team of 45+ qualified professionals brings together decades of collective experience in audit, tax, financial advisory, and business consulting.
+                  Over the past 5+ years, we've helped businesses across various industries achieve their financial objectives. Our team of 45+ qualified professionals brings together decades of collective experience in audit, tax, financial advisory, and business consulting.
                 </p>
                 <p>
                   We believe that every business deserves access to world-class financial services. That's why we've developed flexible service packages tailored to startups, small businesses, and established enterprises alike.
@@ -186,7 +186,7 @@ export default function AboutPage() {
             </p>
             <Link href="/contact">
               <Button size="lg" variant="secondary" className="bg-white text-primary hover:bg-white/90">
-                Get in Touch <ArrowRight className="ml-2 h-4 w-4" />
+                Free Consultation <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
             </Link>
           </div>

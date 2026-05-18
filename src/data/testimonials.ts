@@ -3,7 +3,7 @@ export const testimonials = [
     id: 1,
     name: "Sarah Mitchell",
     role: "CEO, TechStart UK",
-    content: "Accounts Audit has been instrumental in our company's growth. Their tax consulting services saved us over 25% in the first year alone.",
+    content: "HVB Solutions has been instrumental in our company's growth. Their tax consulting services saved us over 25% in the first year alone.",
     avatar: "SM",
     rating: 5,
   },
@@ -37,21 +37,21 @@ export const stats = [
   {
     id: 1,
     label: "Years Experience",
-    value: "15+",
+    value: "5+",
   },
   {
     id: 2,
-    label: "Happy Clients",
-    value: "500+",
-  },
-  {
-    id: 3,
     label: "Projects Completed",
     value: "2,000+",
   },
   {
-    id: 4,
+    id: 3,
     label: "Team Members",
     value: "45+",
+  },
+  {
+    id: 4,
+    label: "Industries Served",
+    value: "25+",
   },
 ];
