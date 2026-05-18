@@ -97,7 +97,7 @@ export default function Home() {
                 {/* CTA Buttons - Made more visible */}
                 <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center lg:justify-start mt-6 sm:mt-8 pt-4">
                   <Link href="/contact">
-                    <Button size="lg" className="bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white px-6 sm:px-8 py-5 sm:py-6 text-base sm:text-lg font-semibold rounded-full shadow-xl shadow-blue-500/30 border-2 border-white/20">
+                    <Button size="lg" className="hover:opacity-90 px-6 sm:px-8 py-5 sm:py-6 text-base sm:text-lg font-semibold rounded-full shadow-xl border-2" style={{ backgroundColor: '#D4AF37', color: '#0F172A', borderColor: '#D4AF37' }}>
                       Free Consultation
                     </Button>
                   </Link>
@@ -190,8 +190,8 @@ export default function Home() {
                   <Link key={service.id} href="/services" className="group">
                     <Card className="h-full hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 border-0 bg-gradient-to-br from-white to-navy-50">
                       <CardHeader className="text-center pb-4">
-                        <div className="mx-auto mb-4 h-14 sm:h-16 w-14 sm:w-16 rounded-2xl bg-gradient-to-br from-navy-800 to-navy-900 flex items-center justify-center group-hover:scale-110 transition-transform shadow-lg">
-                          <Icon className="h-7 sm:h-8 w-7 sm:w-8 text-white" />
+                        <div className="mx-auto mb-4 h-14 sm:h-16 w-14 sm:w-16 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform shadow-lg" style={{ background: '#0F172A', color: '#FFFFFF' }}>
+                          <Icon className="h-7 sm:h-8 w-7 sm:w-8" />
                         </div>
                         <CardTitle className="text-lg sm:text-xl text-navy-900 group-hover:text-navy-800 transition-colors">
                           {service.title}
@@ -201,7 +201,7 @@ export default function Home() {
                         <p className="text-sm sm:text-base text-gray-600 text-center mb-4">{service.description}</p>
                         <div className="text-center">
                           <span className="inline-flex items-center text-navy-800 font-medium group-hover:translate-x-2 transition-transform">
-                            Learn More <ArrowRight className="ml-2 h-4 w-4" />
+                            Learn More <ArrowRight className="ml-2 h-4 w-4" style={{ color: 'oklch(0.22 0.09 260)' }} />
                           </span>
                         </div>
                       </CardContent>
@@ -233,9 +233,9 @@ export default function Home() {
               {testimonials.map((testimonial) => (
                 <Card key={testimonial.id} className="bg-white hover:shadow-xl transition-shadow border-0">
                   <CardContent className="p-4 sm:p-6">
-                    <div className="flex items-center gap-1 mb-4">
+                    <div className="flex items-center gap-1 mb-4" style={{ color: '#0F172A' }}>
                       {[...Array(testimonial.rating)].map((_, i) => (
-                        <Star key={i} className="h-4 w-4 fill-navy-800 text-navy-800" />
+                        <Star key={i} className="h-4 w-4" style={{ fill: '#0F172A', color: '#0F172A' }} />
                       ))}
                     </div>
                     <p className="text-sm sm:text-base text-gray-600 mb-4 sm:mb-6 italic line-clamp-3">{testimonial.content}</p>
@@ -274,8 +274,8 @@ export default function Home() {
               Schedule a free consultation with our experts and discover how we can help your business grow
             </p>
             <Link href="/contact">
-              <Button size="lg" className="bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white px-6 sm:px-10 py-5 sm:py-6 text-base sm:text-lg font-semibold rounded-full shadow-xl shadow-blue-500/30 border-2 border-white/20">
-                Free Consultation <ArrowRight className="ml-2 h-4 w-4" />
+              <Button size="lg" className="hover:opacity-90 px-6 sm:px-10 py-5 sm:py-6 text-base sm:text-lg font-semibold rounded-full shadow-xl border-2 flex items-center gap-2" style={{ backgroundColor: '#D4AF37', color: '#0F172A', borderColor: '#D4AF37' }}>
+                Free Consultation <ArrowRight className="h-4 w-4" style={{ color: '#0F172A' }} />
               </Button>
             </Link>
           </div>

@@ -143,6 +143,11 @@
   }
 }
 
+/* Fix for lucide-react icons */
+svg {
+  color: inherit !important;
+}
+
 /* Navy Blue Custom Colors */
 .bg-navy-50 { background-color: oklch(0.98 0.01 260); }
 .bg-navy-100 { background-color: oklch(0.95 0.02 260); }
