@@ -50,16 +50,14 @@ export function Navigation() {
       <div className="container flex h-16 sm:h-20 items-center justify-between px-4 sm:px-6 lg:px-8">
         {/* Logo */}
         <Link href="/" className="flex items-center">
-          <div className="relative h-20 w-20 sm:h-24 sm:w-24 lg:h-32 lg:w-32">
-            <Image
+          <Image
               src="/logo.png"
               alt="HVB Solutions"
-              fill
+              width={80}
+              height={80}
               className="object-contain"
               priority
-              sizes="(max-width: 640px) 80px, (max-width: 1024px) 96px, 128px"
             />
-          </div>
         </Link>
 
         {/* Desktop Navigation */}
@@ -129,15 +127,13 @@ export function Navigation() {
           <SheetContent side="right" className="w-[280px] sm:w-[320px] max-w-[85vw]">
             <SheetHeader>
               <SheetTitle className="flex items-center text-navy-800 text-base sm:text-lg">
-                <div className="relative h-20 w-20">
-                  <Image
+                <Image
                     src="/logo.png"
                     alt="HVB Solutions"
-                    fill
+                    width={80}
+                    height={80}
                     className="object-contain"
-                    sizes="80px"
                   />
-                </div>
               </SheetTitle>
             </SheetHeader>
             <nav className="mt-4 sm:mt-8 flex flex-col gap-2 sm:gap-3">

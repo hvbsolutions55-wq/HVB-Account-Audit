@@ -11,14 +11,13 @@ export function Footer() {
           {/* Company Info */}
           <div>
             <Link href="/" className="flex items-center gap-3 mb-4">
-              <div className="relative h-12 w-12">
-                <Image
+              <Image
                   src="/logo.png"
                   alt="HVB Solutions"
-                  fill
+                  width={48}
+                  height={48}
                   className="object-contain"
                 />
-              </div>
               <div>
                 <span className="font-bold text-lg text-navy-800">HVB</span>
                 <span className="font-bold text-lg text-navy-600"> Solutions</span>
