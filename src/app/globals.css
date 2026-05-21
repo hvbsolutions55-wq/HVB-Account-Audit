@@ -143,6 +143,81 @@
   }
 }
 
+@layer components {
+  .site-shell {
+    margin-inline: auto;
+    width: 100%;
+    max-width: 1880px;
+    padding-inline: 1rem;
+  }
+
+  .site-shell-inner {
+    margin-inline: auto;
+    max-width: 1700px;
+  }
+
+  .section-space {
+    padding-block: 4rem;
+  }
+
+  .section-space-tight {
+    padding-block: 2.75rem;
+  }
+
+  .section-space-compact {
+    padding-block: 2.25rem;
+  }
+
+  .surface-card {
+    border: 1px solid rgb(215 221 230);
+    border-radius: 28px;
+    background: white;
+    box-shadow: 0 22px 60px rgba(15, 23, 42, 0.08);
+  }
+
+  @media (min-width: 640px) {
+    .site-shell {
+      padding-inline: 1.5rem;
+    }
+
+    .section-space {
+      padding-block: 5rem;
+    }
+
+    .section-space-tight {
+      padding-block: 3.25rem;
+    }
+
+    .section-space-compact {
+      padding-block: 2.75rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .site-shell {
+      padding-inline: 2.5rem;
+    }
+  }
+
+  @media (min-width: 1280px) {
+    .site-shell {
+      padding-inline: 3rem;
+    }
+
+    .section-space {
+      padding-block: 6rem;
+    }
+
+    .section-space-tight {
+      padding-block: 3.75rem;
+    }
+
+    .section-space-compact {
+      padding-block: 3rem;
+    }
+  }
+}
+
 /* Fix for lucide-react icons */
 svg {
   color: inherit !important;

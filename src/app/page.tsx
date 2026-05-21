@@ -1,11 +1,31 @@
+import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, ShieldCheck, TrendingUp, PieChart, Briefcase, Star, Phone, Mail } from "lucide-react";
+import {
+  ArrowRight,
+  ShieldCheck,
+  TrendingUp,
+  PieChart,
+  Briefcase,
+  Star,
+  CalendarDays,
+  PhoneCall,
+  BadgeCheck,
+  Target,
+  Users,
+  LockKeyhole,
+} from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Navigation } from "@/components/navigation";
 import { Footer } from "@/components/footer";
 import { services } from "@/data/services";
 import { testimonials } from "@/data/testimonials";
+import {
+  PRIMARY_CTA_HREF,
+  PRIMARY_CTA_LABEL,
+  SECONDARY_CTA_HREF,
+  SECONDARY_CTA_LABEL,
+} from "@/lib/cta";
 
 const serviceIcons = {
   ShieldCheck,
@@ -14,11 +34,62 @@ const serviceIcons = {
   Briefcase,
 };
 
-const updatedStats = [
-  { id: 1, label: "Years Experience", value: "5+" },
-  { id: 2, label: "Projects Completed", value: "2,000+" },
-  { id: 3, label: "Team Members", value: "45+" },
-  { id: 4, label: "Industries Served", value: "25+" },
+const heroHighlights = [
+  {
+    id: 1,
+    title: "Certified Professionals",
+    description: "Experienced & Qualified",
+    icon: BadgeCheck,
+  },
+  {
+    id: 2,
+    title: "Accurate & Timely Reporting",
+    description: "You Can Rely On",
+    icon: Target,
+  },
+  {
+    id: 3,
+    title: "Tailored Business Solutions",
+    description: "Built Around You",
+    icon: Users,
+  },
+  {
+    id: 4,
+    title: "Confidential & Reliable Service",
+    description: "Your Data is Safe",
+    icon: LockKeyhole,
+  },
+];
+
+const heroStats = [
+  {
+    id: 1,
+    value: "10+",
+    title: "Years of Experience",
+    subtitle: "Delivering Excellence",
+    icon: ShieldCheck,
+  },
+  {
+    id: 2,
+    value: "250+",
+    title: "Satisfied Clients",
+    subtitle: "Across Various Industries",
+    icon: Users,
+  },
+  {
+    id: 3,
+    value: "500+",
+    title: "Projects Completed",
+    subtitle: "Successfully Delivered",
+    icon: Briefcase,
+  },
+];
+
+const serviceLinks = [
+  "/services#audit",
+  "/services#tax",
+  "/services#financial",
+  "/services#business",
 ];
 
 export default function Home() {
@@ -27,128 +98,140 @@ export default function Home() {
       <Navigation />
 
       <main className="flex-1">
-        {/* Hero Section - Navy Blue Theme with Background Image */}
-        <section className="relative min-h-screen bg-navy-900 overflow-hidden">
-          {/* Background Image with Navy Blue Overlay */}
-          <div className="absolute inset-0">
-            {/* Professional Business Background Image */}
-            <div
-              className="absolute inset-0 bg-cover bg-center"
-              style={{
-                backgroundImage: "url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=2070&q=80')",
-              }}
-            ></div>
-            {/* Navy Blue Gradient Overlay */}
-            <div className="absolute inset-0 bg-gradient-to-br from-navy-800/95 via-navy-900/90 to-slate-900/95"></div>
-            <div className="absolute inset-0 bg-black/30"></div>
-            {/* Decorative Gradient Overlays */}
-            <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-blue-900/20 to-transparent"></div>
-            <div className="absolute bottom-0 left-0 w-1/3 h-1/2 bg-gradient-to-tr from-indigo-900/10 to-transparent"></div>
-          </div>
-
-          {/* Grid Pattern */}
-          <div className="absolute inset-0 opacity-[0.02]" style={{
-            backgroundImage: 'radial-gradient(circle at 1px 1px, white 1px, transparent 0)',
-            backgroundSize: '40px 40px'
-          }}></div>
-
-          <div className="container px-4 sm:px-6 lg:px-8 relative z-20">
-            <div className="min-h-[90vh] flex flex-col lg:flex-row items-center justify-center gap-12 py-12 lg:py-20">
-              {/* Left Content */}
-              <div className="flex-1 space-y-6 lg:space-y-8 text-center lg:text-left order-2 lg:order-1">        
-
-                {/* Main Headline */}
-                <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight">
-                  Global Professional<br />
-                  <span className="text-blue-300">Accounting, Finance</span><br />
-                  & Audit Services
-                </h1>
-
-                {/* Subtitle */}
-                <p className="text-base sm:text-lg lg:text-xl text-gray-300 leading-relaxed max-w-2xl mx-auto lg:mx-0">
-                  Fractional CFO, Audit and Accounting Support Designed to Help You Achieve Your Financial Goals
-                </p>
-
-                {/* Contact Info */}
-                <div className="flex flex-col sm:flex-row items-center gap-3 sm:gap-4 justify-center lg:justify-start">
-                  <a href="tel:+442071234567" className="flex items-center gap-3 bg-white/10 backdrop-blur-sm rounded-full px-4 sm:px-6 py-2 sm:py-3 border border-white/20 hover:bg-white/20 transition-all hover:scale-105">
-                    <Phone className="h-5 w-5 text-blue-300" />
-                    <span className="text-white font-medium text-sm">+44 (0)20 7123 4567</span>
-                  </a>
-                  <a href="mailto:info@hvb-solutions.com" className="flex items-center gap-3 bg-white/10 backdrop-blur-sm rounded-full px-4 sm:px-6 py-2 sm:py-3 border border-white/20 hover:bg-white/20 transition-all hover:scale-105">
-                    <Mail className="h-5 w-5 text-blue-300" />
-                    <span className="text-white font-medium text-sm">info@hvb-solutions.com</span>
-                  </a>
-                </div>
-
-                {/* CTA Buttons - Made more visible */}
-                <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center lg:justify-start mt-6 sm:mt-8 pt-4">
-                  <Link href="/contact">
-                    <Button size="lg" className="hover:opacity-90 px-6 sm:px-8 py-5 sm:py-6 text-base sm:text-lg font-semibold rounded-full shadow-xl border-2" style={{ backgroundColor: '#D4AF37', color: '#0F172A', borderColor: '#D4AF37' }}>
-                      Free Consultation
-                    </Button>
-                  </Link>
-                  <Link href="/services">
-                    <Button size="lg" variant="outline" className="bg-white/10 backdrop-blur border-2 border-white/40 text-white hover:bg-white/20 hover:border-white/60 px-6 sm:px-8 py-5 sm:py-6 text-base sm:text-lg font-semibold rounded-full">
-                      Our Services
-                    </Button>
-                  </Link>
-                </div>
-              </div>
-
-              {/* Right Content - Stats Card */}
-              <div className="flex-1 flex justify-center lg:justify-end order-1 lg:order-2 w-full lg:w-auto">
-                <Card className="bg-white/15 backdrop-blur-xl border-white/30 shadow-2xl w-full max-w-md">
-                  <CardHeader className="border-b border-white/20 pb-4 sm:pb-6">
-                    <div className="flex items-center gap-3 mb-2">
-                      <CardTitle className="text-xl sm:text-2xl text-white">Trusted Expertise</CardTitle>
-                    </div>
-                    <CardDescription className="text-gray-200 text-sm sm:text-base">
-                      5+ years of professional experience in global financial services
-                    </CardDescription>
-                  </CardHeader>
-                  <CardContent className="pt-4 sm:pt-6">
-                    <div className="grid grid-cols-2 gap-3 sm:gap-4">
-                      {updatedStats.map((stat) => (
-                        <div key={stat.id} className="text-center p-3 sm:p-4 bg-white/10 rounded-lg backdrop-blur border border-white/20 hover:bg-white/20 transition-colors">
-                          <div className="text-2xl sm:text-3xl font-bold text-white mb-1">{stat.value}</div>
-                          <div className="text-xs sm:text-xs text-gray-200 uppercase tracking-wide leading-tight">
-                            {stat.label}
-                          </div>
-                        </div>
-                      ))}
-                    </div>
-                  </CardContent>
-                </Card>
-              </div>
-            </div>
-
-            {/* Mobile Stats Section */}
-            <div className="lg:hidden pb-12">
-              <div className="grid grid-cols-2 gap-3 sm:gap-4">
-                {updatedStats.map((stat) => (
-                  <div key={stat.id} className="text-center p-3 sm:p-4 bg-white/10 rounded-lg backdrop-blur border border-white/20">
-                    <div className="text-2xl sm:text-3xl font-bold text-white mb-1">{stat.value}</div>
-                    <div className="text-xs text-gray-200 uppercase tracking-wide leading-tight">
-                      {stat.label}
+        <section className="section-space-compact overflow-hidden bg-[#f8fafc]">
+          <div className="site-shell">
+            <div className="site-shell-inner">
+            <div className="surface-card overflow-hidden shadow-[0_24px_70px_rgba(15,23,42,0.12)]">
+              <div className="grid xl:grid-cols-[1.12fr_0.88fr]">
+                <div className="relative px-5 py-8 sm:px-8 sm:py-10 md:px-10 md:py-12 lg:px-12 lg:py-14 xl:px-14 xl:py-16">
+                  <div className="absolute -left-10 bottom-12 hidden h-44 w-44 rounded-full bg-[#f1f5f9] blur-2xl lg:block" />
+                  <div className="absolute left-6 top-6 hidden h-16 w-16 rounded-full bg-[#f8fafc] sm:block" />
+                  <div className="relative z-10 max-w-[44rem]">
+                    <p className="mb-4 text-xs font-semibold uppercase tracking-[0.16em] text-[#d4af37] sm:text-sm lg:text-base">
+                      Professional. Trustworthy. Reliable.
+                    </p>
+                    <h1 className="text-[1.95rem] font-bold leading-[1.02] text-[#0f172a] sm:text-[2.35rem] md:text-[2.7rem] lg:text-[3rem] xl:text-[3.3rem] 2xl:text-[3.5rem]">
+                      <span className="block">Global Professional</span>
+                      <span className="mt-1 block text-[#d4af37]">Accounting, Finance</span>
+                      <span className="mt-1 block">&amp; Audit Services</span>
+                    </h1>
+                    <p className="mt-5 max-w-2xl text-base leading-8 text-[#475569] sm:mt-6 sm:text-lg lg:text-xl">
+                      Fractional CFO, Audit and Accounting Support Designed to Help
+                      You Achieve Your Financial Goals
+                    </p>
+                    <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+                      <Link href={PRIMARY_CTA_HREF}>
+                        <Button
+                          size="lg"
+                          className="h-12 w-full rounded-xl px-6 text-sm font-semibold shadow-[0_16px_30px_rgba(15,23,42,0.16)] sm:h-14 sm:w-auto sm:px-7 sm:text-base"
+                          style={{ backgroundColor: "#0F172A", color: "#F8FAFC" }}
+                        >
+                          <CalendarDays className="mr-2 h-5 w-5" />
+                          {PRIMARY_CTA_LABEL}
+                        </Button>
+                      </Link>
+                      <a href={SECONDARY_CTA_HREF}>
+                        <Button
+                          size="lg"
+                          variant="outline"
+                          className="h-12 w-full rounded-xl border-[#cbd5e1] bg-white px-6 text-sm font-semibold hover:bg-[#f8fafc] sm:h-14 sm:w-auto sm:px-7 sm:text-base"
+                          style={{ color: "#0F172A" }}
+                        >
+                          <PhoneCall className="mr-2 h-5 w-5" />
+                          {SECONDARY_CTA_LABEL}
+                        </Button>
+                      </a>
                     </div>
                   </div>
-                ))}
+                </div>
+
+                <div className="relative min-h-[320px] overflow-hidden sm:min-h-[420px] lg:min-h-[520px] xl:min-h-[640px]">
+                  <Image
+                    src="/hero-accounting.jpg"
+                    alt="Accounting and finance workspace"
+                    fill
+                    priority
+                    sizes="(max-width: 1279px) 100vw, 44vw"
+                    className="object-cover object-center"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-l from-transparent via-white/8 to-white/18" />
+                  <div className="absolute left-0 top-0 h-full w-12 bg-gradient-to-r from-white via-white/70 to-transparent sm:w-16 lg:w-24 xl:w-32" />
+                  <div className="absolute -left-10 -top-14 h-36 w-36 rotate-[24deg] rounded-[999px] bg-[#d4af37] sm:h-44 sm:w-44 lg:h-48 lg:w-48 xl:h-56 xl:w-56" />
+                  <div className="absolute bottom-5 right-4 max-w-[240px] rounded-[22px] border border-white/30 bg-[#0f172a]/94 px-4 py-4 text-[#f8fafc] shadow-[0_18px_45px_rgba(15,23,42,0.3)] backdrop-blur sm:bottom-6 sm:right-6 sm:max-w-[280px] sm:px-5 lg:bottom-8 lg:right-8 lg:px-7">
+                    <div className="text-xs font-semibold uppercase tracking-[0.14em] text-[#d4af37] sm:text-sm">
+                      HVB Solutions
+                    </div>
+                    <div className="mt-2 text-lg font-bold sm:text-xl lg:text-2xl">Accounts &amp; Audit</div>
+                    <div className="mt-1 text-xs text-white/75 sm:text-sm">
+                      Professional services built on accuracy and trust.
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="px-4 pb-4 sm:px-6 sm:pb-6 lg:px-8 lg:pb-8">
+                <div className="relative -mt-2 space-y-4 sm:-mt-4 lg:-mt-8">
+                  <div className="grid gap-3 rounded-[22px] border border-[#e2e8f0] bg-white p-4 shadow-[0_20px_55px_rgba(15,23,42,0.08)] sm:grid-cols-2 sm:gap-4 sm:p-5 xl:grid-cols-4 xl:p-6">
+                    {heroHighlights.map((item, index) => {
+                      const Icon = item.icon;
+                      return (
+                        <div
+                          key={item.id}
+                          className={`flex items-start gap-3 ${index < heroHighlights.length - 1 ? "xl:border-r xl:border-[#e2e8f0] xl:pr-5" : ""}`}
+                        >
+                          <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-xl bg-[#fff8e1] text-[#0f172a]">
+                            <Icon className="h-6 w-6" style={{ color: "#0F172A" }} />
+                          </div>
+                          <div>
+                            <div className="text-base font-semibold leading-6 text-[#0f172a]">
+                              {item.title}
+                            </div>
+                            <div className="mt-1 text-sm text-[#64748b]">
+                              {item.description}
+                            </div>
+                          </div>
+                        </div>
+                      );
+                    })}
+                  </div>
+
+                  <div className="grid gap-4 rounded-[22px] bg-[#0f172a] px-5 py-5 text-[#f8fafc] shadow-[0_24px_60px_rgba(15,23,42,0.18)] md:grid-cols-3 md:px-6 md:py-6 lg:px-8 lg:py-8">
+                    {heroStats.map((stat, index) => {
+                      const Icon = stat.icon;
+                      return (
+                        <div
+                          key={stat.id}
+                          className={`flex items-start gap-4 ${index < heroStats.length - 1 ? "md:border-r md:border-white/12 md:pr-4 lg:pr-6" : ""}`}
+                        >
+                          <div className="flex h-14 w-14 flex-shrink-0 items-center justify-center rounded-2xl bg-[#1e293b] text-[#d4af37]">
+                            <Icon className="h-7 w-7" style={{ color: "#D4AF37" }} />
+                          </div>
+                          <div>
+                            <div className="text-3xl font-bold leading-none text-[#d4af37] lg:text-4xl">
+                              {stat.value}
+                            </div>
+                            <div className="mt-2 text-lg font-semibold text-white lg:text-xl">
+                              {stat.title}
+                            </div>
+                            <div className="mt-1 text-sm text-white/72 lg:text-base">
+                              {stat.subtitle}
+                            </div>
+                          </div>
+                        </div>
+                      );
+                    })}
+                  </div>
+                </div>
               </div>
             </div>
-          </div>
-
-          {/* Bottom Wave */}
-          <div className="absolute bottom-0 left-0 right-0">
-            <svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full">
-              <path d="M0 120L60 105C120 90 240 60 360 45C480 30 600 30 720 37.5C840 45 960 60 1080 67.5C1200 75 1320 75 1380 75L1440 75V120H1380C1320 120 1200 120 1080 120C960 120 840 120 720 120C600 120 480 120 360 120C240 120 120 120 60 120H0Z" fill="white"/>
-            </svg>
+            </div>
           </div>
         </section>
 
         {/* Services Section */}
-        <section className="py-16 sm:py-24 bg-white">
-          <div className="container px-4 sm:px-6 lg:px-8">
+        <section className="section-space bg-white">
+          <div className="site-shell">
+            <div className="site-shell-inner">
             <div className="text-center mb-12 sm:mb-16">
               <div className="inline-block mb-4">
                 <div className="flex items-center justify-center gap-2 text-navy-800">
@@ -163,10 +246,10 @@ export default function Home() {
               </p>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
-              {services.map((service) => {
+              {services.map((service, index) => {
                 const Icon = serviceIcons[service.icon as keyof typeof serviceIcons];
                 return (
-                  <Link key={service.id} href="/services" className="group">
+                  <Link key={service.id} href={serviceLinks[index] ?? "/services"} className="group">
                     <Card className="h-full hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 border-0 bg-gradient-to-br from-white to-navy-50">
                       <CardHeader className="text-center pb-4">
                         <div className="mx-auto mb-4 h-14 sm:h-16 w-14 sm:w-16 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform shadow-lg" style={{ background: '#0F172A', color: '#FFFFFF' }}>
@@ -189,12 +272,14 @@ export default function Home() {
                 );
               })}
             </div>
+            </div>
           </div>
         </section>
 
         {/* Testimonials Section */}
-        <section className="py-16 sm:py-24 bg-gradient-to-br from-navy-50 to-white">
-          <div className="container px-4 sm:px-6 lg:px-8">
+        <section className="section-space bg-gradient-to-br from-navy-50 to-white">
+          <div className="site-shell">
+            <div className="site-shell-inner">
             <div className="text-center mb-12 sm:mb-16">
               <div className="inline-block mb-4">
                 <div className="flex items-center justify-center gap-2 text-navy-800">
@@ -231,11 +316,12 @@ export default function Home() {
                 </Card>
               ))}
             </div>
+            </div>
           </div>
         </section>
 
         {/* CTA Section */}
-        <section className="py-16 sm:py-24 bg-gradient-to-r from-navy-800 via-navy-900 to-slate-900 text-white relative overflow-hidden">
+        <section className="section-space bg-gradient-to-r from-navy-800 via-navy-900 to-slate-900 text-white relative overflow-hidden">
           <div className="absolute inset-0">
             {/* Background Pattern */}
             <div
@@ -247,16 +333,18 @@ export default function Home() {
             <div className="absolute top-10 right-10 w-72 h-72 bg-blue-500/5 rounded-full blur-3xl"></div>
             <div className="absolute bottom-10 left-10 w-80 h-80 bg-indigo-500/5 rounded-full blur-3xl"></div>
           </div>
-          <div className="container px-4 sm:px-6 lg:px-8 relative z-20 flex flex-col items-center text-center">
+          <div className="site-shell">
+            <div className="site-shell-inner relative z-20 flex flex-col items-center text-center">
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-6">Ready to Transform Your Finances?</h2>
             <p className="text-base sm:text-lg md:text-xl text-gray-200 max-w-2xl mx-auto mb-8 sm:mb-10">
               Schedule a free consultation with our experts and discover how we can help your business grow
             </p>
-            <Link href="/contact">
+            <Link href={PRIMARY_CTA_HREF}>
               <Button size="lg" className="hover:opacity-90 px-6 sm:px-10 py-5 sm:py-6 text-base sm:text-lg font-semibold rounded-full shadow-xl border-2 flex items-center gap-2" style={{ backgroundColor: '#D4AF37', color: '#0F172A', borderColor: '#D4AF37' }}>
-                Free Consultation <ArrowRight className="h-4 w-4" style={{ color: '#0F172A' }} />
+                {PRIMARY_CTA_LABEL} <ArrowRight className="h-4 w-4" style={{ color: '#0F172A' }} />
               </Button>
             </Link>
+            </div>
           </div>
         </section>
       </main>

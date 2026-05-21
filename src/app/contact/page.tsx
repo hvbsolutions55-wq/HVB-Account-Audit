@@ -9,6 +9,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Navigation } from "@/components/navigation";
 import { Footer } from "@/components/footer";
 import { services } from "@/data/services";
+import { PRIMARY_CTA_LABEL } from "@/lib/cta";
 
 const FORMSPREE_ENDPOINT = process.env.NEXT_PUBLIC_FORMSPREE_ENDPOINT || "";
 
@@ -24,6 +25,37 @@ type FormData = {
   service: string;
   message: string;
 };
+
+const contactDetails = [
+  {
+    id: 1,
+    title: "Address",
+    icon: MapPin,
+    lines: ["123 Finance Street", "London", "EC1A 1BB", "United Kingdom"],
+  },
+  {
+    id: 2,
+    title: "Phone",
+    icon: Phone,
+    lines: ["+44 (0)20 7123 4567"],
+    href: "tel:+442071234567",
+    meta: "Mon-Fri, 9am-5pm GMT",
+  },
+  {
+    id: 3,
+    title: "Email",
+    icon: Mail,
+    lines: ["info@hvb-solutions.com"],
+    href: "mailto:info@hvb-solutions.com",
+    meta: "We respond within 24 hours",
+  },
+  {
+    id: 4,
+    title: "Office Hours",
+    icon: Clock,
+    lines: ["Monday - Friday: 9am - 5pm GMT", "Saturday - Sunday: Closed"],
+  },
+];
 
 export default function ContactPage() {
   const [formData, setFormData] = useState<FormData>({
@@ -133,209 +165,226 @@ export default function ContactPage() {
       <Navigation />
 
       <main className="flex-1">
-        {/* Header */}
-        <section className="bg-gradient-to-br from-primary/10 via-white to-secondary/10 py-20">
-          <div className="container px-4 sm:px-6 lg:px-8">
-            <div className="max-w-3xl">
-              <h1 className="text-4xl font-bold tracking-tight sm:text-5xl mb-6">Contact HVB Solutions</h1>
-              <p className="text-lg text-muted-foreground">
-                Get in touch with our expert team. We&apos;re here to help with all your accounting and auditing needs.
-              </p>
+        <section className="bg-[radial-gradient(circle_at_top_left,_rgba(212,175,55,0.14),_transparent_20%),linear-gradient(135deg,_rgba(15,23,42,0.06),_white_40%,_rgba(248,250,252,0.96)_100%)] py-8 sm:py-10 xl:py-12">
+          <div className="mx-auto w-full max-w-[1880px] px-4 sm:px-6 lg:px-10 xl:px-12">
+            <div className="mx-auto max-w-[1700px]">
+              <div className="max-w-2xl">
+                <div className="mb-4 inline-flex items-center rounded-full border border-[#d4af37]/35 bg-white/80 px-4 py-1.5 text-[11px] font-semibold uppercase tracking-[0.16em] text-[#b88b16] backdrop-blur">
+                  Contact Our Team
+                </div>
+                <h1 className="mb-3 text-3xl font-bold tracking-tight text-[#0f172a] sm:text-4xl xl:text-[2.8rem]">
+                  Contact HVB Solutions
+                </h1>
+                <p className="max-w-xl text-base leading-7 text-[#5b6678] xl:text-lg">
+                  Get in touch with our expert team. We&apos;re here to help with
+                  all your accounting and auditing needs.
+                </p>
+              </div>
             </div>
           </div>
         </section>
 
         {/* Contact Content */}
-        <section className="py-20 bg-white">
-          <div className="container px-4 sm:px-6 lg:px-8">
-            <div className="grid lg:grid-cols-2 gap-12">
-              {/* Contact Form */}
-              <div>
-                <h2 className="text-2xl font-bold mb-6">Schedule a Free Consultation</h2>
-                {isSuccess && (
-                  <div className="mb-6 p-4 bg-green-50 border border-green-200 rounded-lg flex items-center gap-3 text-green-800" role="alert">
-                    <CheckCircle2 className="h-5 w-5" />
-                    <span>Your consultation request has been sent successfully.</span>
-                  </div>
-                )}
-                {error && (
-                  <div className="mb-6 p-4 bg-red-50 border border-red-200 rounded-lg flex items-center gap-3 text-red-800" role="alert">
-                    <AlertCircle className="h-5 w-5" />
-                    <span>{error}</span>
-                  </div>
-                )}
-                <form onSubmit={handleSubmit} className="space-y-6">
-                  <div className="grid md:grid-cols-2 gap-4">
-                    <div className="space-y-2">
-                      <label htmlFor="name" className="text-sm font-medium">
-                        Full Name <span className="text-red-500">*</span>
-                      </label>
-                      <Input
-                        id="name"
-                        name="name"
-                        placeholder="John Smith"
-                        required
-                        value={formData.name}
-                        onChange={handleChange}
-                      />
+        <section className="bg-[#f8fafc] py-8 sm:py-10 xl:py-12">
+          <div className="mx-auto w-full max-w-[1880px] px-4 sm:px-6 lg:px-10 xl:px-12">
+            <div className="mx-auto max-w-[1700px]">
+              <div className="grid gap-8 xl:grid-cols-[1.08fr_0.92fr] xl:items-start xl:gap-10 2xl:gap-12">
+                <Card className="rounded-[28px] border border-[#e2e8f0] bg-white py-0 shadow-[0_22px_60px_rgba(15,23,42,0.08)]">
+                  <CardHeader className="px-6 pt-6 sm:px-8 sm:pt-8 xl:px-10 xl:pt-10">
+                    <div className="mb-3 inline-flex w-fit items-center rounded-full bg-[#f8fafc] px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.14em] text-[#64748b]">
+                      Consultation Form
                     </div>
-                    <div className="space-y-2">
-                      <label htmlFor="email" className="text-sm font-medium">
-                        Email Address <span className="text-red-500">*</span>
-                      </label>
-                      <Input
-                        id="email"
-                        name="email"
-                        type="email"
-                        placeholder="john@example.com"
-                        required
-                        value={formData.email}
-                        onChange={handleChange}
-                      />
-                    </div>
-                  </div>
-                  <div className="grid md:grid-cols-2 gap-4">
-                    <div className="space-y-2">
-                      <label htmlFor="phone" className="text-sm font-medium">Phone Number</label>
-                      <Input
-                        id="phone"
-                        name="phone"
-                        type="tel"
-                        placeholder="+44 (0)20 7123 4567"
-                        value={formData.phone}
-                        onChange={handleChange}
-                      />
-                    </div>
-                    <div className="space-y-2">
-                      <label htmlFor="company" className="text-sm font-medium">Company Name</label>
-                      <Input
-                        id="company"
-                        name="company"
-                        placeholder="Your Company Ltd"
-                        value={formData.company}
-                        onChange={handleChange}
-                      />
-                    </div>
-                  </div>
-                  <div className="space-y-2">
-                    <label htmlFor="service" className="text-sm font-medium">Service Interest</label>
-                    <select
-                      id="service"
-                      name="service"
-                      value={formData.service}
-                      onChange={handleChange}
-                      className="w-full h-10 rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
-                    >
-                      <option value="">Select a service...</option>
-                      {services.map((service) => (
-                        <option key={service.id} value={service.title}>
-                          {service.title}
-                        </option>
-                      ))}
-                    </select>
-                  </div>
-                  <div className="space-y-2">
-                    <label htmlFor="message" className="text-sm font-medium">
-                      Message <span className="text-red-500">*</span>
-                    </label>
-                    <Textarea
-                      id="message"
-                      name="message"
-                      placeholder="Tell us about your requirements..."
-                      required
-                      rows={5}
-                      value={formData.message}
-                      onChange={handleChange}
-                    />
-                  </div>
-                  <Button type="submit" size="lg" className="w-full bg-primary hover:bg-primary/90" disabled={isSubmitting}>
-                    {isSubmitting ? (
-                      <>
-                        <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-                        Sending...
-                      </>
-                    ) : (
-                      "Send Message"
+                    <CardTitle className="text-2xl font-bold text-[#0f172a] xl:text-[2rem]">
+                      {PRIMARY_CTA_LABEL}
+                    </CardTitle>
+                  </CardHeader>
+                  <CardContent className="px-6 pb-6 sm:px-8 sm:pb-8 xl:px-10 xl:pb-10">
+                    {isSuccess && (
+                      <div className="mb-6 flex items-center gap-3 rounded-2xl border border-green-200 bg-green-50 p-4 text-green-800" role="alert">
+                        <CheckCircle2 className="h-5 w-5" />
+                        <span>Your consultation request has been sent successfully.</span>
+                      </div>
                     )}
-                  </Button>
-                </form>
-              </div>
-
-              {/* Contact Info */}
-              <div className="space-y-6">
-                <h2 className="text-2xl font-bold">Get in Touch</h2>
-                <Card className="border-primary/10">
-                  <CardHeader>
-                    <CardTitle className="text-lg">Contact Information</CardTitle>
-                  </CardHeader>
-                  <CardContent className="space-y-6">
-                    <div className="flex items-start gap-4">
-                      <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10 flex-shrink-0">
-                        <MapPin className="h-5 w-5 text-primary" />
+                    {error && (
+                      <div className="mb-6 flex items-center gap-3 rounded-2xl border border-red-200 bg-red-50 p-4 text-red-800" role="alert">
+                        <AlertCircle className="h-5 w-5" />
+                        <span>{error}</span>
                       </div>
-                      <div>
-                        <div className="font-medium">Address</div>
-                        <div className="text-sm text-muted-foreground">
-                          123 Finance Street<br />
-                          London<br />
-                          EC1A 1BB<br />
-                          United Kingdom
+                    )}
+                    <form onSubmit={handleSubmit} className="space-y-5">
+                      <div className="grid gap-4 md:grid-cols-2">
+                        <div className="space-y-2">
+                          <label htmlFor="name" className="text-sm font-medium text-[#0f172a]">
+                            Full Name <span className="text-red-500">*</span>
+                          </label>
+                          <Input
+                            id="name"
+                            name="name"
+                            placeholder="John Smith"
+                            required
+                            value={formData.name}
+                            onChange={handleChange}
+                            className="h-12 rounded-xl border-[#d7dde6] bg-[#fcfdff] px-4 text-base"
+                          />
+                        </div>
+                        <div className="space-y-2">
+                          <label htmlFor="email" className="text-sm font-medium text-[#0f172a]">
+                            Email Address <span className="text-red-500">*</span>
+                          </label>
+                          <Input
+                            id="email"
+                            name="email"
+                            type="email"
+                            placeholder="john@example.com"
+                            required
+                            value={formData.email}
+                            onChange={handleChange}
+                            className="h-12 rounded-xl border-[#d7dde6] bg-[#fcfdff] px-4 text-base"
+                          />
                         </div>
                       </div>
-                    </div>
-                    <div className="flex items-start gap-4">
-                      <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10 flex-shrink-0">
-                        <Phone className="h-5 w-5 text-primary" />
-                      </div>
-                      <div>
-                        <div className="font-medium">Phone</div>
-                        <a href="tel:+442071234567" className="text-sm text-primary hover:underline">
-                          +44 (0)20 7123 4567
-                        </a>
-                        <div className="text-xs text-muted-foreground mt-1">Mon-Fri, 9am-5pm GMT</div>
-                      </div>
-                    </div>
-                    <div className="flex items-start gap-4">
-                      <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10 flex-shrink-0">
-                        <Mail className="h-5 w-5 text-primary" />
-                      </div>
-                      <div>
-                        <div className="font-medium">Email</div>
-                        <a href="mailto:info@hvb-solutions.com" className="text-sm text-primary hover:underline">
-                          info@hvb-solutions.com
-                        </a>
-                        <div className="text-xs text-muted-foreground mt-1">We respond within 24 hours</div>
-                      </div>
-                    </div>
-                    <div className="flex items-start gap-4">
-                      <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10 flex-shrink-0">
-                        <Clock className="h-5 w-5 text-primary" />
-                      </div>
-                      <div>
-                        <div className="font-medium">Office Hours</div>
-                        <div className="text-sm text-muted-foreground">
-                          Monday - Friday: 9am - 5pm GMT<br />
-                          Saturday - Sunday: Closed
+                      <div className="grid gap-4 md:grid-cols-2">
+                        <div className="space-y-2">
+                          <label htmlFor="phone" className="text-sm font-medium text-[#0f172a]">Phone Number</label>
+                          <Input
+                            id="phone"
+                            name="phone"
+                            type="tel"
+                            placeholder="+44 (0)20 7123 4567"
+                            value={formData.phone}
+                            onChange={handleChange}
+                            className="h-12 rounded-xl border-[#d7dde6] bg-[#fcfdff] px-4 text-base"
+                          />
+                        </div>
+                        <div className="space-y-2">
+                          <label htmlFor="company" className="text-sm font-medium text-[#0f172a]">Company Name</label>
+                          <Input
+                            id="company"
+                            name="company"
+                            placeholder="Your Company Ltd"
+                            value={formData.company}
+                            onChange={handleChange}
+                            className="h-12 rounded-xl border-[#d7dde6] bg-[#fcfdff] px-4 text-base"
+                          />
                         </div>
                       </div>
-                    </div>
+                      <div className="space-y-2">
+                        <label htmlFor="service" className="text-sm font-medium text-[#0f172a]">Service Interest</label>
+                        <select
+                          id="service"
+                          name="service"
+                          value={formData.service}
+                          onChange={handleChange}
+                          className="h-12 w-full rounded-xl border border-[#d7dde6] bg-[#fcfdff] px-4 py-2 text-base ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+                        >
+                          <option value="">Select a service...</option>
+                          {services.map((service) => (
+                            <option key={service.id} value={service.title}>
+                              {service.title}
+                            </option>
+                          ))}
+                        </select>
+                      </div>
+                      <div className="space-y-2">
+                        <label htmlFor="message" className="text-sm font-medium text-[#0f172a]">
+                          Message <span className="text-red-500">*</span>
+                        </label>
+                        <Textarea
+                          id="message"
+                          name="message"
+                          placeholder="Tell us about your requirements..."
+                          required
+                          rows={5}
+                          value={formData.message}
+                          onChange={handleChange}
+                          className="min-h-32 rounded-2xl border-[#d7dde6] bg-[#fcfdff] px-4 py-3 text-base"
+                        />
+                      </div>
+                      <Button type="submit" size="lg" className="h-12 w-full rounded-xl bg-primary text-base font-semibold shadow-[0_16px_30px_rgba(15,23,42,0.12)] hover:bg-primary/90" disabled={isSubmitting}>
+                        {isSubmitting ? (
+                          <>
+                            <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                            Sending...
+                          </>
+                        ) : (
+                          "Send Message"
+                        )}
+                      </Button>
+                    </form>
                   </CardContent>
                 </Card>
 
-                <Card className="bg-gradient-to-br from-primary/5 to-secondary/10 border-primary/10">
-                  <CardHeader>
-                    <CardTitle className="text-lg">Office Location</CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <div className="relative h-48 rounded-lg overflow-hidden bg-primary/5 flex items-center justify-center">
-                      <div className="text-center text-muted-foreground">
-                        <MapPin className="h-8 w-8 mx-auto mb-2 text-primary/50" />
-                        <div className="text-sm">London Office</div>
-                        <div className="text-xs">City of London, UK</div>
+                <div className="space-y-6">
+                  <Card className="rounded-[28px] border border-[#d9dee7] bg-white py-0 shadow-[0_22px_60px_rgba(15,23,42,0.08)]">
+                    <CardHeader className="px-6 pt-6 sm:px-8 sm:pt-8 xl:px-10 xl:pt-10">
+                      <div className="mb-3 inline-flex w-fit items-center rounded-full bg-[#f8fafc] px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.14em] text-[#64748b]">
+                        Reach Us Directly
                       </div>
-                    </div>
-                  </CardContent>
-                </Card>
+                      <CardTitle className="text-2xl font-semibold tracking-tight text-[#0f172a] sm:text-[2rem]">
+                        Contact Information
+                      </CardTitle>
+                    </CardHeader>
+                    <CardContent className="px-6 pb-6 sm:px-8 sm:pb-8 xl:px-10 xl:pb-10">
+                      <div className="grid gap-4 md:grid-cols-2">
+                        {contactDetails.map((item) => {
+                          const Icon = item.icon;
+                          return (
+                            <div
+                              key={item.id}
+                              className="rounded-[22px] border border-[#eef2f7] bg-[linear-gradient(180deg,_#ffffff_0%,_#fbfdff_100%)] p-4 shadow-[0_10px_24px_rgba(15,23,42,0.04)] transition-transform duration-200 hover:-translate-y-0.5"
+                            >
+                              <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-2xl bg-[#eef2f7] text-[#111827]">
+                                <Icon className="h-6 w-6" />
+                              </div>
+                              <div className="min-w-0">
+                                <div className="text-lg font-semibold text-[#111827]">
+                                  {item.title}
+                                </div>
+                                <div className="mt-2 space-y-1 text-sm leading-7 text-[#6b7280] sm:text-[0.95rem]">
+                                  {item.lines.map((line, index) => (
+                                    item.href && index === 0 ? (
+                                      <a
+                                        key={line}
+                                        href={item.href}
+                                        className="block text-[#223457] transition-colors hover:text-[#0f172a]"
+                                      >
+                                        {line}
+                                      </a>
+                                    ) : (
+                                      <div key={line}>{line}</div>
+                                    )
+                                  ))}
+                                </div>
+                                {item.meta ? (
+                                  <div className="mt-3 text-sm text-[#7b8698]">
+                                    {item.meta}
+                                  </div>
+                                ) : null}
+                              </div>
+                            </div>
+                          );
+                        })}
+                      </div>
+                    </CardContent>
+                  </Card>
+
+                  <Card className="rounded-[28px] border border-[#d9dee7] bg-white py-0 shadow-[0_18px_48px_rgba(15,23,42,0.06)]">
+                    <CardHeader className="px-6 pt-6 sm:px-8 sm:pt-8 xl:px-10 xl:pt-10">
+                      <CardTitle className="text-lg font-semibold text-[#0f172a] xl:text-xl">
+                        Office Location
+                      </CardTitle>
+                    </CardHeader>
+                    <CardContent className="px-6 pb-6 sm:px-8 sm:pb-8 xl:px-10 xl:pb-10">
+                      <div className="relative flex h-40 items-center justify-center overflow-hidden rounded-[24px] border border-[#eef2f7] bg-gradient-to-br from-[#f8fafc] to-[#eef2f7]">
+                        <div className="text-center text-[#64748b]">
+                          <MapPin className="mx-auto mb-3 h-9 w-9 text-[#0f172a]" />
+                          <div className="text-base font-medium text-[#0f172a]">London Office</div>
+                          <div className="mt-1 text-sm">City of London, UK</div>
+                        </div>
+                      </div>
+                    </CardContent>
+                  </Card>
+                </div>
               </div>
             </div>
           </div>
@@ -343,8 +392,9 @@ export default function ContactPage() {
 
         {/* FAQ Section */}
         <section id="faq" className="py-20 bg-gradient-to-br from-secondary/20 to-white">
-          <div className="container px-4 sm:px-6 lg:px-8">
-            <div className="max-w-3xl mx-auto">
+          <div className="mx-auto w-full max-w-[1880px] px-4 sm:px-6 lg:px-10 xl:px-12">
+            <div className="mx-auto max-w-[1700px]">
+              <div className="max-w-3xl mx-auto">
               <h2 className="text-3xl font-bold tracking-tight sm:text-4xl mb-12 text-center">Frequently Asked Questions</h2>
               <div className="space-y-4">
                 {[
@@ -374,6 +424,7 @@ export default function ContactPage() {
                     </CardContent>
                   </Card>
                 ))}
+              </div>
               </div>
             </div>
           </div>
