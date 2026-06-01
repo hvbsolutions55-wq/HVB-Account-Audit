@@ -10,8 +10,10 @@ type PageShellProps = {
 export function PageShell({ children }: PageShellProps) {
   return (
     <div className="flex min-h-screen flex-col">
-      <PromoBanner />
-      <Navigation />
+      <div className="sticky top-0 z-50">
+        <PromoBanner />
+        <Navigation />
+      </div>
       <main className="flex-1">{children}</main>
       <Footer />
       <WhatsAppButton />

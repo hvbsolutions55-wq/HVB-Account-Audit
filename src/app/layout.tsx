@@ -10,7 +10,7 @@ const inter = Inter({
 export const metadata: Metadata = {
   title: "HVB Solutions | Fractional CFO, Accounting & Audit Support",
   description:
-    "Professional fractional CFO, accounting and audit support services. Outsourced finance expertise for businesses across the USA, UK, Europe, and beyond.",
+    "Professional fractional CFO, accounting and audit support services tailored to your business needs. Accurate, reliable, and result-driven outsourced finance expertise.",
   keywords: [
     "HVB Solutions",
     "fractional CFO",
@@ -21,8 +21,9 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: "HVB Solutions" }],
   openGraph: {
-    title: "HVB Solutions | Global Accounting, Finance & Audit Services",
-    description: "Professional accounting and auditing services designed to help you achieve your financial goals.",
+    title: "HVB Solutions | Fractional CFO, Accounting & Audit Support",
+    description:
+      "Professional fractional CFO, accounting and audit support services tailored to your business needs. Outsourcing beyond borders.",
     type: "website",
   },
 };

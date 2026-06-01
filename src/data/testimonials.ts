@@ -1,39 +1,24 @@
 export const testimonials = [
   {
     id: 1,
-    name: "Sarah Mitchell",
-    role: "CEO, TechStart UK",
+    name: "Sarah Johnson",
+    role: "Tech Startup CEO",
     content:
-      "HVB Solutions has been instrumental in our company's growth. Their outsourced finance support saved us significant time and cost in the first year alone.",
-    avatar: "SM",
-    rating: 5,
+      "HVB Solutions transformed our bookkeeping process. Their virtual services are efficient, accurate, and have saved us countless hours.",
   },
   {
     id: 2,
-    name: "James Thompson",
-    role: "Director, Thompson Manufacturing",
+    name: "Michael Chen",
+    role: "E-commerce Director",
     content:
-      "Professional, reliable, and thorough. The audit support team identified areas for improvement that significantly enhanced our operations.",
-    avatar: "JT",
-    rating: 5,
+      "Professional, reliable, and always responsive. The financial modeling they provided helped us secure our Series A funding.",
   },
   {
     id: 3,
-    name: "Emily Chen",
-    role: "Founder, GreenSolutions",
+    name: "Emma Rodriguez",
+    role: "HR Manager",
     content:
-      "The fractional CFO team provided invaluable guidance during our expansion. Their expertise made a complex process seamless.",
-    avatar: "EC",
-    rating: 5,
-  },
-  {
-    id: 4,
-    name: "Michael Roberts",
-    role: "CFO, HealthPlus Group",
-    content:
-      "Outstanding service across all our accounting needs. Responsive team with deep industry knowledge.",
-    avatar: "MR",
-    rating: 5,
+      "Outstanding payroll services. They handle everything seamlessly, and our employees are always paid on time.",
   },
 ];
 

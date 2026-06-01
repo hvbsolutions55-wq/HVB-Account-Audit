@@ -34,7 +34,7 @@ export const services: Service[] = [
     details: [
       "Month-end close",
       "Audit preparation",
-      "Financial reporting under IFRS and local GAAP",
+      "Financial reporting under IFRS and Local GAAP",
       "Consolidation",
       "Drafting of technical accounting memorandum",
       "Transaction accounting",
@@ -103,6 +103,7 @@ export const services: Service[] = [
       "Inventory audit assistance",
       "Internal audit and control reviews",
       "Risk assessment and management",
+      "Preparation of audit file",
     ],
   },
   {

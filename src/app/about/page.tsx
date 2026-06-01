@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { PageShell } from "@/components/page-shell";
 import { stats } from "@/data/testimonials";
+import { founderExtraParagraph } from "@/data/site-content";
 import { PRIMARY_CTA_HREF, PRIMARY_CTA_LABEL } from "@/lib/cta";
 
 const values = [
@@ -28,9 +29,9 @@ const values = [
   },
   {
     icon: Zap,
-    title: "Efficiency",
+    title: "Innovation",
     description:
-      "Modern workflows and disciplined processes let us move quickly without lowering quality.",
+      "Embracing technology and modern methodologies to deliver efficient, effective solutions.",
   },
 ];
 
@@ -81,7 +82,7 @@ export default function AboutPage() {
           <div className="site-shell-inner space-y-10">
             <Card className="surface-card border-[#d9e0ea] bg-white">
               <CardHeader className="px-6 pt-6 sm:px-8 sm:pt-8">
-                <p className="text-sm font-semibold uppercase tracking-wide text-[#b88b16]">
+                <p className="mb-2 text-sm font-semibold uppercase tracking-wide text-[#b88b16]">
                   You&apos;re In Good Company
                 </p>
                 <CardTitle className="text-3xl text-[#0f172a]">About HVB Solutions</CardTitle>
@@ -205,6 +206,7 @@ export default function AboutPage() {
                     power &amp; energy, real estate, healthcare, services sector, listed companies,
                     and public sector entities.
                   </p>
+                  <p>{founderExtraParagraph}</p>
                   <p>
                     Under his leadership, HVB Solutions has grown into a trusted outsourcing
                     partner known for professionalism, confidentiality, accuracy, and timely

@@ -8,7 +8,6 @@ import { Button } from "@/components/ui/button";
 import { BrandLogo } from "@/components/brand-logo";
 import { serviceNavItems } from "@/data/services";
 import { PRIMARY_CTA_HREF, PRIMARY_CTA_LABEL } from "@/lib/cta";
-import { SITE_TAGLINE } from "@/lib/site";
 import {
   Sheet,
   SheetContent,
@@ -76,21 +75,17 @@ export function Navigation() {
 
   return (
     <header
-      className="sticky top-0 z-50 w-full border-b border-white/10 shadow-[0_10px_28px_rgba(15,23,42,0.18)] backdrop-blur"
+      className="w-full border-b border-white/10 shadow-[0_10px_28px_rgba(15,23,42,0.18)] backdrop-blur"
       style={{ backgroundColor: "#0F172A" }}
     >
       <div className="site-shell">
         <div className="site-shell-inner flex h-16 items-center justify-between gap-4 sm:h-20">
           <Link href="/" className="flex min-w-0 items-center gap-3">
-            <BrandLogo className="block h-10 w-auto shrink-0 object-contain sm:h-12" priority />
-            <span className="hidden flex-col lg:flex">
-              <span className="text-sm font-semibold leading-tight text-[#f8fafc]">
-                HVB Solutions
-              </span>
-              <span className="text-[11px] leading-tight text-[#d4af37]">
-                {SITE_TAGLINE}
-              </span>
-            </span>
+            <BrandLogo
+              variant="nav"
+              className="block h-10 w-auto max-w-[140px] shrink-0 object-contain object-left sm:h-12 sm:max-w-[160px]"
+              priority
+            />
           </Link>
 
           <nav className="hidden items-center gap-6 md:flex lg:gap-8">
@@ -166,8 +161,7 @@ export function Navigation() {
             <SheetContent side="right" className="w-[280px] max-w-[85vw] sm:w-[320px]">
               <SheetHeader>
                 <SheetTitle className="flex flex-col items-start gap-1">
-                  <BrandLogo className="h-12 w-auto object-contain sm:h-14" />
-                  <span className="text-xs font-medium text-[#64748b]">{SITE_TAGLINE}</span>
+                  <BrandLogo variant="nav" className="h-12 w-auto max-w-[220px] object-contain" />
                 </SheetTitle>
               </SheetHeader>
               <nav className="mt-4 flex flex-col gap-2 sm:mt-8 sm:gap-3">
@@ -203,6 +197,7 @@ export function Navigation() {
                         onClick={() => setIsOpen(false)}
                         className="flex items-center gap-3 rounded-lg p-3 text-base font-medium text-gray-700 transition-colors hover:bg-navy-50 hover:text-navy-800 sm:text-lg"
                       >
+                        {link.icon && <link.icon className="h-5 w-5" />}
                         {link.label}
                       </Link>
                     )}

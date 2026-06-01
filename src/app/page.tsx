@@ -8,7 +8,6 @@ import {
   Building2,
   ShieldCheck,
   Briefcase,
-  Star,
   CalendarDays,
   BadgeCheck,
   Target,
@@ -21,7 +20,8 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { PageShell } from "@/components/page-shell";
 import { services, getServiceHref } from "@/data/services";
 import { testimonials, homeStats } from "@/data/testimonials";
-import { processSteps, processIntro } from "@/data/how-it-works";
+import { HowItWorksProcess } from "@/components/how-it-works-process";
+import { homeIntroParagraphs, homeServicesIntro } from "@/data/site-content";
 import {
   PRIMARY_CTA_HREF,
   PRIMARY_CTA_LABEL,
@@ -58,7 +58,8 @@ export default function Home() {
                     Outsourcing beyond borders
                   </p>
                   <h1 className="text-[1.85rem] font-bold leading-[1.08] text-[#0f172a] sm:text-[2.2rem] md:text-[2.5rem] lg:text-[2.85rem]">
-                    Professional Fractional CFO, Accounting and Audit Support Services
+                    Professional Fractional CFO, accounting and audit support services
+                    tailored to your business needs.
                   </h1>
                   <p className="mt-5 max-w-2xl text-base leading-8 text-[#475569] sm:text-lg">
                     We provide accurate, reliable and result-driven financial solutions to
@@ -92,13 +93,15 @@ export default function Home() {
                 <div className="relative min-h-[320px] overflow-hidden sm:min-h-[420px] lg:min-h-[520px] xl:min-h-[600px]">
                   <Image
                     src="/hero-accounting.jpg"
-                    alt="Professional finance team collaboration"
+                    alt="Modern corporate office towers — professional finance services"
                     fill
                     priority
                     sizes="(max-width: 1279px) 100vw, 44vw"
-                    className="object-cover object-center"
+                    className="object-cover object-[center_35%]"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-l from-transparent via-white/8 to-white/18" />
+                  <div className="absolute inset-0 bg-gradient-to-l from-[#0f172a]/70 via-[#0f172a]/20 to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#0f172a]/45 via-transparent to-transparent" />
+                  <div className="absolute left-0 top-0 h-full w-16 bg-gradient-to-r from-white via-white/90 to-transparent sm:w-20 lg:w-28" />
                   <div className="absolute bottom-5 right-4 max-w-[260px] rounded-[22px] border border-white/30 bg-[#0f172a]/94 px-4 py-4 text-[#f8fafc] shadow-[0_18px_45px_rgba(15,23,42,0.3)] backdrop-blur sm:bottom-6 sm:right-6 sm:px-5">
                     <div className="text-xs font-semibold uppercase tracking-[0.14em] text-[#d4af37]">
                       HVB Solutions
@@ -156,6 +159,16 @@ export default function Home() {
         </div>
       </section>
 
+      <section className="section-space-compact bg-[#f8fafc]">
+        <div className="site-shell">
+          <div className="site-shell-inner max-w-4xl space-y-5 text-base leading-8 text-[#5b6678] sm:text-lg">
+            {homeIntroParagraphs.map((paragraph) => (
+              <p key={paragraph.slice(0, 40)}>{paragraph}</p>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <section className="section-space bg-white">
         <div className="site-shell">
           <div className="site-shell-inner">
@@ -166,8 +179,8 @@ export default function Home() {
               <h2 className="mt-3 text-2xl font-bold text-navy-900 sm:text-3xl md:text-4xl">
                 Comprehensive Financial Services
               </h2>
-              <p className="mx-auto mt-4 max-w-2xl text-base text-gray-600 sm:text-lg">
-                We provide end-to-end financial &amp; business solutions
+              <p className="mx-auto mt-4 max-w-3xl text-base text-gray-600 sm:text-lg">
+                {homeServicesIntro}
               </p>
             </div>
             <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 lg:gap-8">
@@ -206,39 +219,15 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="how-it-works" className="section-space bg-[#f8fafc]">
+      <section id="how-it-works" className="section-space bg-white">
         <div className="site-shell">
           <div className="site-shell-inner">
-            <div className="mb-12 max-w-2xl text-center mx-auto">
-              <span className="text-xs font-semibold uppercase tracking-wider text-[#b88b16]">
-                Process
-              </span>
-              <h2 className="mt-3 text-3xl font-bold text-[#0f172a] sm:text-4xl">
-                How HVB Solutions Work
-              </h2>
-              <p className="mt-4 text-base leading-7 text-[#5b6678]">{processIntro}</p>
-            </div>
-            <div className="grid gap-6 md:grid-cols-3">
-              {processSteps.map((step) => {
-                const Icon = step.icon;
-                return (
-                  <Card key={step.id} className="surface-card border-[#d9e0ea] bg-white">
-                    <CardContent className="px-6 py-8">
-                      <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-2xl bg-[#0f172a] text-[#d4af37]">
-                        <Icon className="h-6 w-6" />
-                      </div>
-                      <div className="text-sm font-semibold uppercase tracking-wide text-[#d4af37]">
-                        Step {step.id}
-                      </div>
-                      <h3 className="mt-2 text-xl font-semibold text-[#0f172a]">{step.title}</h3>
-                      <p className="mt-3 text-sm leading-7 text-[#5b6678]">{step.description}</p>
-                    </CardContent>
-                  </Card>
-                );
-              })}
-            </div>
-            <div className="mt-8 text-center">
-              <Link href="/how-it-works" className="text-sm font-semibold text-[#0f172a] hover:text-[#b88b16]">
+            <HowItWorksProcess compact />
+            <div className="mt-10 text-center lg:mt-12">
+              <Link
+                href="/how-it-works"
+                className="text-sm font-semibold text-[#2563EB] hover:text-[#0f172a]"
+              >
                 View full process →
               </Link>
             </div>
@@ -257,27 +246,19 @@ export default function Home() {
                 What Our Clients Say
               </h2>
             </div>
-            <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4 lg:gap-8">
+            <div className="grid grid-cols-1 gap-6 md:grid-cols-3 md:gap-8">
               {testimonials.map((testimonial) => (
-                <Card key={testimonial.id} className="border-0 bg-white hover:shadow-xl">
-                  <CardContent className="p-4 sm:p-6">
-                    <div className="mb-4 flex gap-1">
-                      {[...Array(testimonial.rating)].map((_, i) => (
-                        <Star key={i} className="h-4 w-4 fill-[#0f172a] text-[#0f172a]" />
-                      ))}
-                    </div>
-                    <p className="mb-4 line-clamp-4 text-sm italic text-gray-600 sm:text-base">
+                <Card
+                  key={testimonial.id}
+                  className="border border-[#e8e8e8] bg-white shadow-[0_4px_20px_rgba(15,23,42,0.06)] transition-shadow hover:shadow-[0_8px_28px_rgba(15,23,42,0.1)]"
+                >
+                  <CardContent className="flex h-full flex-col justify-between p-6 sm:p-8">
+                    <p className="font-serif text-base italic leading-relaxed text-[#4a4a4a] sm:text-lg">
                       {testimonial.content}
                     </p>
-                    <div className="flex items-center gap-3">
-                      <div className="flex h-10 w-10 items-center justify-center rounded-full bg-gradient-to-br from-navy-800 to-navy-900 text-sm font-semibold text-white sm:h-12 sm:w-12">
-                        {testimonial.avatar}
-                      </div>
-                      <div>
-                        <div className="text-sm font-semibold text-navy-900">{testimonial.name}</div>
-                        <div className="text-xs text-gray-500">{testimonial.role}</div>
-                      </div>
-                    </div>
+                    <p className="mt-6 text-sm font-bold text-[#7B1E3A] sm:text-base">
+                      — {testimonial.name}, {testimonial.role}
+                    </p>
                   </CardContent>
                 </Card>
               ))}
@@ -293,7 +274,7 @@ export default function Home() {
               Ready to strengthen your finance function?
             </h2>
             <p className="mx-auto mt-4 max-w-2xl text-base text-gray-200 sm:text-lg">
-              Book a free consultation and discover how outsourced CFO, accounting, and
+              Schedule a free consultation and discover how outsourced CFO, accounting, and
               audit support can work for your business.
             </p>
             <Link href={PRIMARY_CTA_HREF} className="mt-8">

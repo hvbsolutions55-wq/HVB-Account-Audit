@@ -36,15 +36,12 @@ export default function CareersPage() {
           <div className="site-shell-inner max-w-3xl">
             <Card className="surface-card border-[#d9e0ea] bg-white">
               <CardContent className="space-y-5 px-6 py-8 text-base leading-8 text-[#5b6678] sm:px-8">
-                <p>
-                  Open positions will be posted here as they become available. If you are
-                  interested in joining our virtual delivery team, please send your CV and area
-                  of expertise through our contact form.
-                </p>
-                <p className="text-sm text-[#64748b]">
-                  Once the website is live, job listings can be added through the site admin
-                  (blog/CMS workflow) — we can provide a short guide for posting roles when you
-                  are ready.
+                <p className="text-base leading-7 text-[#5b6678]">
+                  Open positions will be posted here as they become available. To add a role,
+                  contact us with your CV, or manage listings alongside blog posts in{" "}
+                  <Link href="/studio" className="font-semibold text-[#0f172a] underline decoration-[#d4af37] underline-offset-4">
+                    Sanity Studio
+                  </Link>.
                 </p>
                 <Link href={PRIMARY_CTA_HREF}>
                   <Button

@@ -42,7 +42,7 @@ export default function PrivacyPage() {
                   <ul>
                     <li>
                       <strong>Name and Contact Details:</strong> Name, email
-                      address, phone number, and mailing address
+                      address, and phone number
                     </li>
                     <li>
                       <strong>Business Information:</strong> Company name,

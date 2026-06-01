@@ -3,12 +3,7 @@ import { Mail, Phone } from "lucide-react";
 import { Separator } from "@/components/ui/separator";
 import { BrandLogo } from "@/components/brand-logo";
 import { services, getServiceHref } from "@/data/services";
-import {
-  CONTACT_EMAIL,
-  CONTACT_PHONE,
-  CONTACT_PHONE_HREF,
-  SITE_TAGLINE,
-} from "@/lib/site";
+import { CONTACT_EMAIL, CONTACT_PHONE, CONTACT_PHONE_HREF } from "@/lib/site";
 
 export function Footer() {
   return (
@@ -18,10 +13,9 @@ export function Footer() {
           <div className="grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-[1.2fr_0.9fr_0.9fr_1fr]">
             <div className="max-w-sm">
               <Link href="/" className="mb-4 flex items-center gap-3">
-                <BrandLogo className="h-11 w-auto object-contain sm:h-14" />
+                <BrandLogo variant="full" className="h-16 w-auto max-w-[180px] object-contain sm:h-20 sm:max-w-[220px]" />
               </Link>
-              <p className="text-sm font-medium text-[#d4af37]">{SITE_TAGLINE}</p>
-              <p className="mt-2 text-sm leading-7 text-white/72 sm:text-[15px]">
+              <p className="mt-3 text-sm leading-7 text-white/72 sm:text-[15px]">
                 Professional fractional CFO, accounting and audit support services
                 tailored to your business needs.
               </p>

@@ -174,8 +174,8 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                       Need help applying this to your business?
                     </h2>
                     <p className="mt-3 max-w-2xl text-base leading-7 text-white/72">
-                      Speak with HVB Solutions for accounting, audit, tax, or
-                      fractional CFO support tailored to your business goals.
+                      Speak with HVB Solutions for outsourced fractional CFO, controller,
+                      accounting, corporate, and audit support tailored to your business.
                     </p>
                     <div className="mt-6 flex flex-col gap-3 sm:flex-row">
                       <Link href={PRIMARY_CTA_HREF}>
