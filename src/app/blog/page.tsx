@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight, BookOpenText } from "lucide-react";
-import { Navigation } from "@/components/navigation";
-import { Footer } from "@/components/footer";
+import { PageShell } from "@/components/page-shell";
 import { PostCard } from "@/components/blog/post-card";
 import { Button } from "@/components/ui/button";
 import { getAllPosts } from "@/sanity/lib/api";
@@ -32,10 +31,7 @@ export default async function BlogPage() {
   const [featuredPost, ...remainingPosts] = posts;
 
   return (
-    <div className="flex min-h-screen flex-col">
-      <Navigation />
-
-      <main className="flex-1">
+    <PageShell>
         <section className="bg-[radial-gradient(circle_at_top_left,_rgba(212,175,55,0.14),_transparent_20%),linear-gradient(135deg,_rgba(15,23,42,0.06),_white_40%,_rgba(248,250,252,0.96)_100%)] section-space-tight">
           <div className="site-shell">
             <div className="site-shell-inner">
@@ -143,9 +139,6 @@ export default async function BlogPage() {
             </div>
           </div>
         </section>
-      </main>
-
-      <Footer />
-    </div>
+    </PageShell>
   );
 }

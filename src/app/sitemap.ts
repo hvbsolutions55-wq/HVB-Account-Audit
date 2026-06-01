@@ -3,7 +3,17 @@ import { getPostSlugs } from "@/sanity/lib/api";
 import { siteUrl } from "@/sanity/env";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const staticRoutes = ["", "/about", "/services", "/contact", "/privacy", "/terms", "/blog"];
+  const staticRoutes = [
+    "",
+    "/about",
+    "/services",
+    "/how-it-works",
+    "/careers",
+    "/contact",
+    "/privacy",
+    "/terms",
+    "/blog",
+  ];
   const posts = await getPostSlugs();
 
   return [
