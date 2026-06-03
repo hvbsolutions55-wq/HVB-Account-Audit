@@ -13,7 +13,23 @@ export default defineConfig({
   basePath: "/studio",
   projectId,
   dataset,
-  plugins: [structureTool()],
+  plugins: [
+    structureTool({
+      structure: (S) =>
+        S.list()
+          .title("Content")
+          .items([
+            S.documentTypeListItem("post").title("Blog Posts"),
+            S.documentTypeListItem("jobOpening").title("Job Openings"),
+            S.divider(),
+            ...S.documentTypeListItems().filter(
+              (item) =>
+                item.getId() &&
+                !["post", "jobOpening"].includes(item.getId() as string)
+            ),
+          ]),
+    }),
+  ],
   schema: {
     types: schemaTypes,
   },

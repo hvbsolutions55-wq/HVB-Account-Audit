@@ -2,12 +2,15 @@ import { cache } from "react";
 import { client, previewClient } from "./client";
 import { isSanityConfigured } from "../env";
 import {
+  JOB_BY_SLUG_QUERY,
+  JOB_SLUGS_QUERY,
+  JOBS_QUERY,
   POST_BY_SLUG_QUERY,
   POSTS_QUERY,
   POST_SLUGS_QUERY,
   RELATED_POSTS_QUERY,
 } from "./queries";
-import type { BlogPost, BlogPostCard } from "./types";
+import type { BlogPost, BlogPostCard, JobOpening, JobOpeningCard } from "./types";
 
 const defaultFetchOptions = {
   next: { revalidate: 300 },
@@ -70,3 +73,29 @@ export const getRelatedPosts = cache(
     );
   }
 );
+
+export const getAllJobs = cache(async (): Promise<JobOpeningCard[]> => {
+  return (
+    (await fetchSanity<JobOpeningCard[]>(JOBS_QUERY, {}, defaultFetchOptions)) ?? []
+  );
+});
+
+export const getJobSlugs = cache(async (): Promise<string[]> => {
+  return (
+    (await fetchSanity<string[]>(
+      JOB_SLUGS_QUERY,
+      {},
+      defaultFetchOptions,
+      true
+    )) ?? []
+  );
+});
+
+export const getJobBySlug = cache(async (slug: string): Promise<JobOpening | null> => {
+  return await fetchSanity<JobOpening>(
+    JOB_BY_SLUG_QUERY,
+    { slug },
+    defaultFetchOptions,
+    true
+  );
+});

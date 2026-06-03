@@ -54,3 +54,22 @@ export type BlogPost = BlogPostCard & {
   seo?: SanitySeo;
   faqs?: SanityFaq[];
 };
+
+export type JobOpeningCard = {
+  _id: string;
+  title: string;
+  slug: SanitySlug;
+  location: string;
+  employmentType: string;
+  department?: string;
+  excerpt?: string;
+  publishedAt: string;
+  isOpen?: boolean;
+};
+
+export type JobOpening = JobOpeningCard & {
+  body?: unknown[];
+  applyEmail?: string;
+  applyUrl?: string;
+  seo?: SanitySeo;
+};

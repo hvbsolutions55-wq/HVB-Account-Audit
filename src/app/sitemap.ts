@@ -1,5 +1,5 @@
 import type { MetadataRoute } from "next";
-import { getPostSlugs } from "@/sanity/lib/api";
+import { getJobSlugs, getPostSlugs } from "@/sanity/lib/api";
 import { siteUrl } from "@/sanity/env";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
@@ -14,7 +14,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     "/terms",
     "/blog",
   ];
-  const posts = await getPostSlugs();
+  const [posts, jobs] = await Promise.all([getPostSlugs(), getJobSlugs()]);
 
   return [
     ...staticRoutes.map((route) => ({
@@ -23,6 +23,10 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     })),
     ...posts.map((slug) => ({
       url: `${siteUrl}/blog/${slug}`,
+      lastModified: new Date(),
+    })),
+    ...jobs.map((slug) => ({
+      url: `${siteUrl}/careers/${slug}`,
       lastModified: new Date(),
     })),
   ];
