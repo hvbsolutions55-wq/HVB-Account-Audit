@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight, BookOpenText } from "lucide-react";
-import { Navigation } from "@/components/navigation";
-import { Footer } from "@/components/footer";
+import { PageShell } from "@/components/page-shell";
 import { PostCard } from "@/components/blog/post-card";
 import { Button } from "@/components/ui/button";
 import { getAllPosts } from "@/sanity/lib/api";
@@ -32,23 +31,20 @@ export default async function BlogPage() {
   const [featuredPost, ...remainingPosts] = posts;
 
   return (
-    <div className="flex min-h-screen flex-col">
-      <Navigation />
-
-      <main className="flex-1">
+    <PageShell>
         <section className="bg-[radial-gradient(circle_at_top_left,_rgba(212,175,55,0.14),_transparent_20%),linear-gradient(135deg,_rgba(15,23,42,0.06),_white_40%,_rgba(248,250,252,0.96)_100%)] section-space-tight">
           <div className="site-shell">
             <div className="site-shell-inner">
               <div className="max-w-3xl">
                 <div className="mb-4 inline-flex items-center rounded-full border border-[#d4af37]/35 bg-white/80 px-4 py-1.5 text-[11px] font-semibold uppercase tracking-[0.16em] text-[#b88b16] backdrop-blur">
-                  Insights & Marketing Content
+                  Financial Insights
                 </div>
                 <h1 className="mb-4 text-3xl font-bold tracking-tight text-[#0f172a] sm:text-4xl xl:text-[2.8rem]">
-                  Blog &amp; Insights
+                  Blog
                 </h1>
                 <p className="max-w-2xl text-base leading-7 text-[#5b6678] xl:text-lg">
-                  Publish SEO-focused articles, educate potential clients, and
-                  support lead generation with consistent financial content.
+                  A standard article template for financial insights. Publish new posts anytime
+                  via Sanity Studio at <Link href="/studio" className="font-semibold text-[#0f172a] underline decoration-[#d4af37] underline-offset-4">/studio</Link>.
                 </p>
               </div>
             </div>
@@ -81,8 +77,11 @@ export default async function BlogPage() {
                     No blog posts published yet
                   </h2>
                   <p className="mx-auto mt-3 max-w-2xl text-base leading-7 text-[#5b6678]">
-                    Create your first article in Sanity Studio and it will appear
-                    here automatically.
+                    Create your first article in{" "}
+                    <Link href="/studio" className="font-semibold text-[#0f172a] underline decoration-[#d4af37] underline-offset-4">
+                      Sanity Studio
+                    </Link>{" "}
+                    and it will appear here automatically.
                   </p>
                 </div>
               ) : (
@@ -121,11 +120,11 @@ export default async function BlogPage() {
             <div className="site-shell-inner">
               <div className="overflow-hidden rounded-[30px] bg-gradient-to-r from-[#0f172a] via-[#111c34] to-[#1e293b] px-6 py-10 text-white shadow-[0_26px_60px_rgba(15,23,42,0.18)] sm:px-8 lg:px-12 lg:py-12">
                 <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
-                  Turn readers into qualified leads
+                  Need outsourced finance support?
                 </h2>
                 <p className="mt-4 max-w-2xl text-base leading-7 text-white/72 sm:text-lg">
-                  Pair educational content with a strong advisory offer so blog
-                  traffic supports consultations and direct outreach.
+                  Pair educational content with a free consultation for fractional CFO,
+                  accounting, and audit support.
                 </p>
                 <div className="mt-8 flex flex-col gap-3 sm:flex-row">
                   <Link href={PRIMARY_CTA_HREF}>
@@ -143,9 +142,6 @@ export default async function BlogPage() {
             </div>
           </div>
         </section>
-      </main>
-
-      <Footer />
-    </div>
+    </PageShell>
   );
 }

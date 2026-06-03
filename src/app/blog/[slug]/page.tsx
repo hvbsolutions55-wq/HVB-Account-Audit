@@ -1,7 +1,7 @@
 import Image from "next/image";
 import type { Metadata } from "next";
 import Link from "next/link";
-import { CalendarDays, PhoneCall, UserRound } from "lucide-react";
+import { ArrowRight, CalendarDays, UserRound } from "lucide-react";
 import { notFound } from "next/navigation";
 import {
   Accordion,
@@ -10,8 +10,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { Button } from "@/components/ui/button";
-import { Navigation } from "@/components/navigation";
-import { Footer } from "@/components/footer";
+import { PageShell } from "@/components/page-shell";
 import { PostCard } from "@/components/blog/post-card";
 import { BlogPortableText } from "@/components/blog/portable-text";
 import { getPostBySlug, getPostSlugs, getRelatedPosts } from "@/sanity/lib/api";
@@ -94,10 +93,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
     : null;
 
   return (
-    <div className="flex min-h-screen flex-col">
-      <Navigation />
-
-      <main className="flex-1">
+    <PageShell>
         <section className="bg-[radial-gradient(circle_at_top_left,_rgba(212,175,55,0.14),_transparent_20%),linear-gradient(135deg,_rgba(15,23,42,0.06),_white_40%,_rgba(248,250,252,0.96)_100%)] section-space-tight">
           <div className="site-shell">
             <div className="site-shell-inner">
@@ -178,8 +174,8 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                       Need help applying this to your business?
                     </h2>
                     <p className="mt-3 max-w-2xl text-base leading-7 text-white/72">
-                      Speak with HVB Solutions for accounting, audit, tax, or
-                      fractional CFO support tailored to your business goals.
+                      Speak with HVB Solutions for outsourced fractional CFO, controller,
+                      accounting, corporate, and audit support tailored to your business.
                     </p>
                     <div className="mt-6 flex flex-col gap-3 sm:flex-row">
                       <Link href={PRIMARY_CTA_HREF}>
@@ -190,15 +186,15 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                           {PRIMARY_CTA_LABEL}
                         </Button>
                       </Link>
-                      <a href={SECONDARY_CTA_HREF}>
+                      <Link href={SECONDARY_CTA_HREF}>
                         <Button
                           variant="outline"
                           className="h-12 rounded-xl border-white/20 bg-white/6 px-6 text-sm font-semibold text-white hover:bg-white/10 sm:px-7 sm:text-base"
                         >
-                          <PhoneCall className="mr-2 h-4 w-4" />
                           {SECONDARY_CTA_LABEL}
+                          <ArrowRight className="ml-2 h-4 w-4" />
                         </Button>
-                      </a>
+                      </Link>
                     </div>
                   </div>
                 </article>
@@ -272,9 +268,6 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
             </div>
           </div>
         </section>
-      </main>
-
-      <Footer />
-    </div>
+    </PageShell>
   );
 }

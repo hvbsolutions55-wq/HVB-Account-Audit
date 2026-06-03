@@ -1,14 +1,11 @@
-import { Navigation } from "@/components/navigation";
-import { Footer } from "@/components/footer";
+import { PageShell } from "@/components/page-shell";
+import { CONTACT_EMAIL, CONTACT_PHONE } from "@/lib/site";
 
 const LAST_UPDATED = "May 21, 2026";
 
 export default function PrivacyPage() {
   return (
-    <div className="flex min-h-screen flex-col">
-      <Navigation />
-
-      <main className="flex-1">
+    <PageShell>
         <section className="bg-[radial-gradient(circle_at_top_left,_rgba(212,175,55,0.14),_transparent_20%),linear-gradient(135deg,_rgba(15,23,42,0.06),_white_40%,_rgba(248,250,252,0.96)_100%)] section-space-tight">
           <div className="site-shell">
             <div className="site-shell-inner">
@@ -45,7 +42,7 @@ export default function PrivacyPage() {
                   <ul>
                     <li>
                       <strong>Name and Contact Details:</strong> Name, email
-                      address, phone number, and mailing address
+                      address, and phone number
                     </li>
                     <li>
                       <strong>Business Information:</strong> Company name,
@@ -135,18 +132,14 @@ export default function PrivacyPage() {
                   </p>
                   <div className="mt-4 space-y-1 text-sm leading-7 text-[#0f172a] sm:text-[15px]">
                     <p><strong>HVB Solutions</strong></p>
-                    <p>Email: info@hvb-solutions.com</p>
-                    <p>Phone: +44 (0)20 7123 4567</p>
-                    <p>Address: 123 Finance Street, London, UK</p>
+                    <p>Email: {CONTACT_EMAIL}</p>
+                    <p>Phone: {CONTACT_PHONE}</p>
                   </div>
                 </div>
               </div>
             </div>
           </div>
         </section>
-      </main>
-
-      <Footer />
-    </div>
+    </PageShell>
   );
 }

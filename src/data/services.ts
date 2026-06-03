@@ -1,58 +1,139 @@
-export const services = [
+export type Service = {
+  id: number;
+  slug: string;
+  title: string;
+  description: string;
+  icon: string;
+  details: string[];
+};
+
+export const services: Service[] = [
   {
     id: 1,
-    title: "Audit & Assurance",
-    description: "Comprehensive audit services providing assurance on financial statements and internal controls.",
-    icon: "ShieldCheck",
+    slug: "fractional-cfo",
+    title: "Fractional CFO",
+    description:
+      "Strategic financial leadership without the cost of a full-time CFO.",
+    icon: "LineChart",
     details: [
-      "Statutory audits for companies",
-      "Internal audit and control reviews",
-      "Risk assessment and management",
-      "Compliance and regulatory audits",
-      "Special purpose audits",
+      "Budgeting & forecasting",
+      "Financial planning & analysis",
+      "Cash flow management",
+      "KPIs & dashboards",
+      "Board & investor reporting",
+      "Treasury management",
     ],
-    price: "From £1,500",
   },
   {
     id: 2,
-    title: "Tax Consulting",
-    description: "Expert tax planning and compliance services to optimize your tax position.",
-    icon: "TrendingUp",
+    slug: "controller-accounting",
+    title: "Controller & Accounting Advisory",
+    description:
+      "Expert support for financial reporting, controls, and accounting processes.",
+    icon: "ClipboardList",
     details: [
-      "Corporate tax planning",
-      "Personal tax advice",
-      "VAT planning and compliance",
-      "International tax services",
-      "Tax dispute resolution",
+      "Month-end close",
+      "Audit preparation",
+      "Financial reporting under IFRS and Local GAAP",
+      "Consolidation",
+      "Drafting of technical accounting memorandum",
+      "Transaction accounting",
+      "Financial reporting",
+      "Technical accounting",
+      "Internal controls",
+      "Chart of accounts design",
     ],
-    price: "From £800",
   },
   {
     id: 3,
-    title: "Financial Advisory",
-    description: "Strategic financial guidance to help businesses grow and succeed.",
-    icon: "PieChart",
+    slug: "staff-accountant",
+    title: "Staff Accountant & Financial Operations",
+    description:
+      "Efficient accounting and operational support for your daily business needs.",
+    icon: "Calculator",
     details: [
-      "Financial planning and analysis",
-      "Investment advisory",
-      "Mergers and acquisitions support",
-      "Business valuation",
-      "Financial restructuring",
+      "Bookkeeping",
+      "Bank reconciliations",
+      "Journal entries",
+      "GL maintenance",
+      "Accounts payable",
+      "Accounts receivable",
+      "Payroll administration",
+      "Inventory management",
+      "Master data management",
     ],
-    price: "From £1,200",
   },
   {
     id: 4,
-    title: "Business Advisory",
-    description: "Comprehensive business consulting to drive operational excellence.",
+    slug: "corporate-services",
+    title: "Corporate Services",
+    description:
+      "Professional assistance with corporate compliance and administration.",
+    icon: "Building2",
+    details: [
+      "Drafting board meeting minutes",
+      "Drafting shareholder resolutions",
+      "AGM/EGM documentation",
+      "Circular resolutions",
+      "Director appointment/resignation documents",
+      "Meeting notices and agendas",
+      "Convening, organizing and attending board meetings",
+      "Handling of correspondence",
+      "Critical analysis of documents",
+    ],
+  },
+  {
+    id: 5,
+    slug: "audit-support",
+    title: "Audit Support Services",
+    description:
+      "End-to-end support for audit preparation and compliance requirements.",
+    icon: "ShieldCheck",
+    details: [
+      "Audit file preparation support",
+      "Audit working paper preparation",
+      "Lead schedule preparation",
+      "Financial statement tie-outs",
+      "Account reconciliations support",
+      "Sampling and testing assistance",
+      "Bank confirmation coordination",
+      "Accounts payable and receivable testing",
+      "Payroll audit support",
+      "Fixed asset verification support",
+      "Inventory audit assistance",
+      "Internal audit and control reviews",
+      "Risk assessment and management",
+      "Preparation of audit file",
+    ],
+  },
+  {
+    id: 6,
+    slug: "business-advisory-tax",
+    title: "Business Advisory & Tax Consulting",
+    description:
+      "Strategic advice to help your business grow and stay tax compliant.",
     icon: "Briefcase",
     details: [
-      "Business strategy development",
-      "Process improvement",
-      "Technology consulting",
-      "Change management",
-      "Performance optimization",
+      "Accounting software implementation",
+      "Preparation of corporate tax returns",
+      "Compilation of data for tax advisors/lawyers",
+      "Budgeting & forecasting models",
+      "Cash flow projections",
+      "Business valuation models",
+      "Investment & project analysis",
+      "Startup fundraising models",
     ],
-    price: "From £1,000",
   },
+];
+
+export function getServiceHref(slug: string) {
+  return `/services#${slug}`;
+}
+
+export const serviceNavItems = [
+  { href: "/services", label: "All Services" },
+  ...services.map((s) => ({
+    href: getServiceHref(s.slug),
+    label: s.title,
+  })),
 ];

@@ -1,57 +1,35 @@
 export const testimonials = [
   {
     id: 1,
-    name: "Sarah Mitchell",
-    role: "CEO, TechStart UK",
-    content: "HVB Solutions has been instrumental in our company's growth. Their tax consulting services saved us over 25% in the first year alone.",
-    avatar: "SM",
-    rating: 5,
+    name: "Sarah Johnson",
+    role: "Tech Startup CEO",
+    content:
+      "HVB Solutions transformed our bookkeeping process. Their virtual services are efficient, accurate, and have saved us countless hours.",
   },
   {
     id: 2,
-    name: "James Thompson",
-    role: "Director, Thompson Manufacturing",
-    content: "Professional, reliable, and thorough. The audit team identified areas for improvement that significantly enhanced our operations.",
-    avatar: "JT",
-    rating: 5,
+    name: "Michael Chen",
+    role: "E-commerce Director",
+    content:
+      "Professional, reliable, and always responsive. The financial modeling they provided helped us secure our Series A funding.",
   },
   {
     id: 3,
-    name: "Emily Chen",
-    role: "Founder, GreenSolutions",
-    content: "The financial advisory team provided invaluable guidance during our merger. Their expertise made a complex process seamless.",
-    avatar: "EC",
-    rating: 5,
-  },
-  {
-    id: 4,
-    name: "Michael Roberts",
-    role: "CFO, HealthPlus Group",
-    content: "Outstanding service across all our accounting needs. Responsive team with deep industry knowledge.",
-    avatar: "MR",
-    rating: 5,
+    name: "Emma Rodriguez",
+    role: "HR Manager",
+    content:
+      "Outstanding payroll services. They handle everything seamlessly, and our employees are always paid on time.",
   },
 ];
 
 export const stats = [
-  {
-    id: 1,
-    label: "Years Experience",
-    value: "5+",
-  },
-  {
-    id: 2,
-    label: "Projects Completed",
-    value: "2,000+",
-  },
-  {
-    id: 3,
-    label: "Team Members",
-    value: "45+",
-  },
-  {
-    id: 4,
-    label: "Industries Served",
-    value: "25+",
-  },
+  { id: 1, label: "Years Experience", value: "5+" },
+  { id: 2, label: "Happy Clients", value: "500+" },
+  { id: 3, label: "Projects Completed", value: "500+" },
+  { id: 4, label: "Team Members", value: "25+" },
+];
+
+export const homeStats = [
+  { id: 1, value: "5+", title: "Years of Experience", subtitle: "Delivering excellence" },
+  { id: 2, value: "10+", title: "Professionals", subtitle: "Qualified finance experts" },
 ];
