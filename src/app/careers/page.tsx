@@ -2,8 +2,10 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight, Briefcase } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
+import { JobCard } from "@/components/careers/job-card";
 import { PageShell } from "@/components/page-shell";
+import { getAllJobs } from "@/sanity/lib/api";
+import { isSanityConfigured } from "@/sanity/env";
 import { PRIMARY_CTA_HREF, PRIMARY_CTA_LABEL } from "@/lib/cta";
 
 export const metadata: Metadata = {
@@ -12,7 +14,11 @@ export const metadata: Metadata = {
     "Join HVB Solutions — outsourced finance, accounting, and audit support roles.",
 };
 
-export default function CareersPage() {
+export const revalidate = 300;
+
+export default async function CareersPage() {
+  const jobs = await getAllJobs();
+
   return (
     <PageShell>
       <section className="section-space-tight bg-[radial-gradient(circle_at_top_left,_rgba(212,175,55,0.14),_transparent_20%),linear-gradient(135deg,_rgba(15,23,42,0.06),_white_40%,_rgba(248,250,252,0.96)_100%)]">
@@ -22,7 +28,9 @@ export default function CareersPage() {
               <Briefcase className="h-3.5 w-3.5" />
               Careers
             </div>
-            <h1 className="mb-4 text-3xl font-bold text-[#0f172a] sm:text-4xl">Work With HVB Solutions</h1>
+            <h1 className="mb-4 text-3xl font-bold text-[#0f172a] sm:text-4xl">
+              Work With HVB Solutions
+            </h1>
             <p className="text-base leading-7 text-[#5b6678]">
               We are building a team of finance, accounting, and audit professionals who deliver
               high-quality outsourced support to clients worldwide.
@@ -33,27 +41,73 @@ export default function CareersPage() {
 
       <section className="section-space bg-[#f8fafc]">
         <div className="site-shell">
-          <div className="site-shell-inner max-w-3xl">
-            <Card className="surface-card border-[#d9e0ea] bg-white">
-              <CardContent className="space-y-5 px-6 py-8 text-base leading-8 text-[#5b6678] sm:px-8">
-                <p className="text-base leading-7 text-[#5b6678]">
-                  Open positions will be posted here as they become available. To add a role,
-                  contact us with your CV, or manage listings alongside blog posts in{" "}
-                  <Link href="/studio" className="font-semibold text-[#0f172a] underline decoration-[#d4af37] underline-offset-4">
-                    Sanity Studio
-                  </Link>.
-                </p>
-                <Link href={PRIMARY_CTA_HREF}>
-                  <Button
-                    className="rounded-xl font-semibold"
-                    style={{ backgroundColor: "#0F172A", color: "#F8FAFC" }}
+          <div className="site-shell-inner">
+            {!isSanityConfigured ? (
+              <div className="surface-card mx-auto max-w-3xl border-[#d9e0ea] bg-white px-6 py-8 text-center sm:px-8">
+                <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-2xl bg-[#0f172a] text-[#d4af37]">
+                  <Briefcase className="h-7 w-7" />
+                </div>
+                <h2 className="mt-5 text-2xl font-bold text-[#0f172a]">
+                  Sanity setup required before publishing jobs
+                </h2>
+                <p className="mx-auto mt-3 max-w-2xl text-base leading-7 text-[#5b6678]">
+                  Add your Sanity project ID and dataset to the environment variables, then open{" "}
+                  <Link
+                    href="/studio"
+                    className="font-semibold text-[#0f172a] underline decoration-[#d4af37] underline-offset-4"
                   >
-                    {PRIMARY_CTA_LABEL}
-                    <ArrowRight className="ml-2 h-4 w-4" />
-                  </Button>
-                </Link>
-              </CardContent>
-            </Card>
+                    Sanity Studio
+                  </Link>{" "}
+                  to create job openings.
+                </p>
+              </div>
+            ) : jobs.length === 0 ? (
+              <div className="surface-card mx-auto max-w-3xl border-[#d9e0ea] bg-white px-6 py-8 text-center sm:px-8">
+                <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-2xl bg-[#0f172a] text-[#d4af37]">
+                  <Briefcase className="h-7 w-7" />
+                </div>
+                <h2 className="mt-5 text-2xl font-bold text-[#0f172a]">
+                  No open positions right now
+                </h2>
+                <p className="mx-auto mt-3 max-w-2xl text-base leading-7 text-[#5b6678]">
+                  New roles will appear here when published in{" "}
+                  <Link
+                    href="/studio"
+                    className="font-semibold text-[#0f172a] underline decoration-[#d4af37] underline-offset-4"
+                  >
+                    Sanity Studio
+                  </Link>
+                  . You can still reach out for future opportunities.
+                </p>
+                <div className="mt-6">
+                  <Link href={PRIMARY_CTA_HREF}>
+                    <Button
+                      className="rounded-xl font-semibold"
+                      style={{ backgroundColor: "#0F172A", color: "#F8FAFC" }}
+                    >
+                      {PRIMARY_CTA_LABEL}
+                      <ArrowRight className="ml-2 h-4 w-4" />
+                    </Button>
+                  </Link>
+                </div>
+              </div>
+            ) : (
+              <div className="space-y-8">
+                <div className="max-w-2xl">
+                  <h2 className="text-2xl font-bold tracking-tight text-[#0f172a]">
+                    Open Positions
+                  </h2>
+                  <p className="mt-2 text-base leading-7 text-[#5b6678]">
+                    Browse current opportunities and apply directly from each role page.
+                  </p>
+                </div>
+                <div className="grid gap-6 md:grid-cols-2">
+                  {jobs.map((job) => (
+                    <JobCard key={job._id} job={job} />
+                  ))}
+                </div>
+              </div>
+            )}
           </div>
         </div>
       </section>

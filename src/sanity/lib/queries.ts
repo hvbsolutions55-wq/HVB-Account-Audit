@@ -60,3 +60,42 @@ export const RELATED_POSTS_QUERY = defineQuery(`
       ${postFields}
     }
 `);
+
+const jobFields = `
+  _id,
+  title,
+  slug,
+  location,
+  employmentType,
+  department,
+  excerpt,
+  publishedAt,
+  isOpen
+`;
+
+export const JOBS_QUERY = defineQuery(`
+  *[_type == "jobOpening" && isOpen == true && defined(slug.current)]
+    | order(publishedAt desc) {
+      ${jobFields}
+    }
+`);
+
+export const JOB_SLUGS_QUERY = defineQuery(`
+  *[_type == "jobOpening" && isOpen == true && defined(slug.current)][].slug.current
+`);
+
+export const JOB_BY_SLUG_QUERY = defineQuery(`
+  *[_type == "jobOpening" && slug.current == $slug && isOpen == true][0]{
+    ${jobFields},
+    body,
+    applyEmail,
+    applyUrl,
+    seo{
+      metaTitle,
+      metaDescription,
+      canonicalUrl,
+      keywords,
+      noIndex
+    }
+  }
+`);

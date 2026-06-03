@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { useState, useEffect, useRef } from "react";
 import { usePathname, useRouter } from "next/navigation";
-import { Menu, Home, ChevronDown, Briefcase } from "lucide-react";
+import { Menu, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { BrandLogo } from "@/components/brand-logo";
 import { serviceNavItems } from "@/data/services";
@@ -18,7 +18,7 @@ import {
 } from "@/components/ui/sheet";
 
 const navLinks = [
-  { href: "/", label: "Home", icon: Home },
+  { href: "/", label: "Home", icon: null },
   {
     href: "#",
     label: "Services",
@@ -28,7 +28,7 @@ const navLinks = [
   { href: "/about", label: "About", icon: null },
   { href: "/how-it-works", label: "How It Works", icon: null },
   { href: "/blog", label: "Blog", icon: null },
-  { href: "/careers", label: "Careers", icon: Briefcase },
+  { href: "/careers", label: "Careers", icon: null },
   { href: "/contact", label: "Contact", icon: null },
 ];
 
