@@ -9,13 +9,13 @@ import { PRIMARY_CTA_HREF, PRIMARY_CTA_LABEL } from "@/lib/cta";
 export const metadata: Metadata = {
   title: "How It Works | HVB Solutions",
   description:
-    "Consult, match, and engage — how HVB Solutions delivers outsourced CFO, accounting, and audit support as an extension of your team.",
+    "Discovery & consultation, expert matching, and seamless engagement — how HVB Solutions delivers outsourced finance support.",
 };
 
 export default function HowItWorksPage() {
   return (
     <PageShell>
-      <section className="section-space bg-white">
+      <section className="section-space bg-[radial-gradient(circle_at_top_left,_rgba(212,175,55,0.14),_transparent_22%),linear-gradient(135deg,_rgba(15,23,42,0.05),_white_45%,_rgba(248,250,252,0.98)_100%)]">
         <div className="site-shell">
           <div className="site-shell-inner">
             <HowItWorksProcess />
@@ -23,16 +23,16 @@ export default function HowItWorksPage() {
         </div>
       </section>
 
-      <section className="section-space-tight border-t border-[#e8edf3] bg-[#f8fafc]">
+      <section className="section-space-tight border-t border-[#e8edf3] bg-[#0f172a] text-white">
         <div className="site-shell">
           <div className="site-shell-inner text-center">
-            <p className="mb-6 text-base text-[#5b6678]">
+            <p className="mb-6 text-base text-white/80">
               Ready to get started? Book a free consultation with our team.
             </p>
             <Link href={PRIMARY_CTA_HREF}>
               <Button
                 size="lg"
-                className="rounded-xl font-semibold"
+                className="rounded-xl font-semibold shadow-[0_16px_30px_rgba(0,0,0,0.2)]"
                 style={{ backgroundColor: "#D4AF37", color: "#0F172A" }}
               >
                 {PRIMARY_CTA_LABEL}

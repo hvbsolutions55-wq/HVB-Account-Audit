@@ -219,14 +219,17 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="how-it-works" className="section-space bg-white">
+      <section
+        id="how-it-works"
+        className="section-space bg-[radial-gradient(circle_at_top_right,_rgba(212,175,55,0.1),_transparent_25%),linear-gradient(180deg,_#f8fafc_0%,_#ffffff_100%)]"
+      >
         <div className="site-shell">
           <div className="site-shell-inner">
             <HowItWorksProcess compact />
             <div className="mt-10 text-center lg:mt-12">
               <Link
                 href="/how-it-works"
-                className="text-sm font-semibold text-[#2563EB] hover:text-[#0f172a]"
+                className="text-sm font-semibold text-[#0f172a] transition-colors hover:text-[#b88b16]"
               >
                 View full process →
               </Link>

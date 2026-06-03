@@ -8,6 +8,7 @@ import { Button } from "@/components/ui/button";
 import { BrandLogo } from "@/components/brand-logo";
 import { serviceNavItems } from "@/data/services";
 import { PRIMARY_CTA_HREF, PRIMARY_CTA_LABEL } from "@/lib/cta";
+import { SITE_NAME } from "@/lib/site";
 import {
   Sheet,
   SheetContent,
@@ -80,12 +81,12 @@ export function Navigation() {
     >
       <div className="site-shell">
         <div className="site-shell-inner flex h-16 items-center justify-between gap-4 sm:h-20">
-          <Link href="/" className="flex min-w-0 items-center gap-3">
-            <BrandLogo
-              variant="nav"
-              className="block h-10 w-auto max-w-[140px] shrink-0 object-contain object-left sm:h-12 sm:max-w-[160px]"
-              priority
-            />
+          <Link
+            href="/"
+            aria-label={`${SITE_NAME} home`}
+            className="flex min-w-0 shrink-0 items-center"
+          >
+            <BrandLogo variant="nav" priority />
           </Link>
 
           <nav className="hidden items-center gap-6 md:flex lg:gap-8">
@@ -161,7 +162,7 @@ export function Navigation() {
             <SheetContent side="right" className="w-[280px] max-w-[85vw] sm:w-[320px]">
               <SheetHeader>
                 <SheetTitle className="flex flex-col items-start gap-1">
-                  <BrandLogo variant="nav" className="h-12 w-auto max-w-[220px] object-contain" />
+                  <BrandLogo variant="nav" />
                 </SheetTitle>
               </SheetHeader>
               <nav className="mt-4 flex flex-col gap-2 sm:mt-8 sm:gap-3">

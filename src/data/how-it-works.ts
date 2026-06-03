@@ -5,25 +5,25 @@ export type ProcessStep = {
 };
 
 export const processIntro =
-  "We seamlessly integrate into your team, providing financial support with the flexibility and collaboration of an in-house partner.";
+  "We integrate seamlessly with your team, delivering flexible financial expertise with the collaboration and responsiveness of an in-house partner.";
 
 export const processSteps: ProcessStep[] = [
   {
     id: 1,
-    title: "Consult",
+    title: "Discovery & Consultation",
     description:
-      "We start with a complimentary consultation to understand your business, identify opportunities, and address your challenges with tailored financial solutions.",
+      "We begin with a complimentary consultation to gain a deep understanding of your business, identify key opportunities, and uncover challenges. This allows us to design tailored financial solutions aligned with your goals.",
   },
   {
     id: 2,
-    title: "Match",
+    title: "Expert Matching",
     description:
-      "We pair you with a CFO, Controller, or staff Accountant whose expertise aligns perfectly with your needs, ensuring the right fit for your business.",
+      "We carefully pair you with a CFO, Controller, or Staff Accountant whose expertise best fits your business needs, ensuring the right strategic and operational support from the start.",
   },
   {
     id: 3,
-    title: "Engage",
+    title: "Seamless Engagement",
     description:
-      "You set the terms and timeline of your engagement with full transparency, track progress and stay informed 24/7—so you're always in control.",
+      "You define the scope, terms, and timeline of engagement. We maintain full transparency throughout the process, providing ongoing updates and insights so you remain informed and in control at all times.",
   },
 ];

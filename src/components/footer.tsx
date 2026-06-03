@@ -12,8 +12,8 @@ export function Footer() {
         <div className="site-shell-inner">
           <div className="grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-[1.2fr_0.9fr_0.9fr_1fr]">
             <div className="max-w-sm">
-              <Link href="/" className="mb-4 flex items-center gap-3">
-                <BrandLogo variant="full" className="h-16 w-auto max-w-[180px] object-contain sm:h-20 sm:max-w-[220px]" />
+              <Link href="/" className="mb-4 inline-flex">
+                <BrandLogo variant="full" />
               </Link>
               <p className="mt-3 text-sm leading-7 text-white/72 sm:text-[15px]">
                 Professional fractional CFO, accounting and audit support services
