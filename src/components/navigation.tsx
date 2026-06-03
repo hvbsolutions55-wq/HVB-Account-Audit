@@ -18,18 +18,17 @@ import {
 } from "@/components/ui/sheet";
 
 const navLinks = [
-  { href: "/", label: "Home", icon: null },
+  { href: "/", label: "Home" },
   {
     href: "#",
     label: "Services",
-    icon: null,
     dropdown: serviceNavItems,
   },
-  { href: "/about", label: "About", icon: null },
-  { href: "/how-it-works", label: "How It Works", icon: null },
-  { href: "/blog", label: "Blog", icon: null },
-  { href: "/careers", label: "Careers", icon: null },
-  { href: "/contact", label: "Contact", icon: null },
+  { href: "/about", label: "About" },
+  { href: "/how-it-works", label: "How It Works" },
+  { href: "/blog", label: "Blog" },
+  { href: "/careers", label: "Careers" },
+  { href: "/contact", label: "Contact" },
 ];
 
 export function Navigation() {
@@ -127,7 +126,6 @@ export function Navigation() {
                     className="flex items-center gap-1.5 text-[15px] font-medium transition-colors hover:text-[#D4AF37]"
                     style={{ color: "#F8FAFC" }}
                   >
-                    {link.icon && <link.icon className="h-4 w-4" />}
                     {link.label}
                   </Link>
                 )}
@@ -198,7 +196,6 @@ export function Navigation() {
                         onClick={() => setIsOpen(false)}
                         className="flex items-center gap-3 rounded-lg p-3 text-base font-medium text-gray-700 transition-colors hover:bg-navy-50 hover:text-navy-800 sm:text-lg"
                       >
-                        {link.icon && <link.icon className="h-5 w-5" />}
                         {link.label}
                       </Link>
                     )}
