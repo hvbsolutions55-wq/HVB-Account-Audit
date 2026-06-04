@@ -259,8 +259,9 @@ export default function Home() {
                     <p className="font-serif text-base italic leading-relaxed text-[#4a4a4a] sm:text-lg">
                       {testimonial.content}
                     </p>
-                    <p className="mt-6 text-sm font-bold text-[#7B1E3A] sm:text-base">
-                      — {testimonial.name}, {testimonial.role}
+                    <p className="mt-6 text-sm sm:text-base">
+                      <span className="font-semibold text-[#0f172a]">— {testimonial.name}</span>
+                      <span className="text-[#5b6678]">, {testimonial.role}</span>
                     </p>
                   </CardContent>
                 </Card>

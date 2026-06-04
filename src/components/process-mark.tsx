@@ -1,6 +1,6 @@
 import { cn } from "@/lib/utils";
 
-const MARK_SRC = "/stylish-logo-cropped.png";
+const MARK_SRC = "/arrow-how-it-work.png";
 
 type ProcessMarkProps = {
   className?: string;
@@ -14,7 +14,7 @@ export function ProcessMark({
     // eslint-disable-next-line @next/next/no-img-element
     <img
       src={MARK_SRC}
-      alt=""
+      alt="HVB process cycle with growth chart"
       decoding="async"
       className={cn("block max-w-none shrink-0", className)}
     />
