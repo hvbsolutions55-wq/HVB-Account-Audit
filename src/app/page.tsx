@@ -92,27 +92,16 @@ export default function Home() {
 
                 <div className="relative min-h-[320px] overflow-hidden sm:min-h-[420px] lg:min-h-[520px] xl:min-h-[600px]">
                   <Image
-                    src="/hero-accounting.jpg"
-                    alt="Modern corporate office towers — professional finance services"
+                    src="/hero.png"
+                    alt="Professional finance workspace with accounting reports and analytics dashboard"
                     fill
                     priority
                     sizes="(max-width: 1279px) 100vw, 44vw"
-                    className="object-cover object-[center_35%]"
+                    className="object-cover object-center"
                   />
                   <div className="absolute inset-0 bg-gradient-to-l from-[#0f172a]/70 via-[#0f172a]/20 to-transparent" />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#0f172a]/45 via-transparent to-transparent" />
                   <div className="absolute left-0 top-0 h-full w-16 bg-gradient-to-r from-white via-white/90 to-transparent sm:w-20 lg:w-28" />
-                  <div className="absolute bottom-5 right-4 max-w-[260px] rounded-[22px] border border-white/30 bg-[#0f172a]/94 px-4 py-4 text-[#f8fafc] shadow-[0_18px_45px_rgba(15,23,42,0.3)] backdrop-blur sm:bottom-6 sm:right-6 sm:px-5">
-                    <div className="text-xs font-semibold uppercase tracking-[0.14em] text-[#d4af37]">
-                      HVB Solutions
-                    </div>
-                    <div className="mt-2 text-lg font-bold sm:text-xl">
-                      Outsourced finance expertise
-                    </div>
-                    <div className="mt-1 text-xs text-white/75 sm:text-sm">
-                      Built on accuracy, trust, and responsive delivery.
-                    </div>
-                  </div>
                 </div>
               </div>
 
