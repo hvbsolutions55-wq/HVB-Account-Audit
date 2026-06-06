@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 import {
   ArrowRight,
@@ -8,25 +7,19 @@ import {
   Building2,
   ShieldCheck,
   Briefcase,
-  CalendarDays,
-  BadgeCheck,
-  Target,
-  Users,
-  LockKeyhole,
   type LucideIcon,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { PageShell } from "@/components/page-shell";
 import { services, getServiceHref } from "@/data/services";
-import { testimonials, homeStats } from "@/data/testimonials";
+import { testimonials } from "@/data/testimonials";
 import { HowItWorksProcess } from "@/components/how-it-works-process";
+import { HomeHero } from "@/components/home-hero";
 import { homeIntroParagraphs, homeServicesIntro } from "@/data/site-content";
 import {
   PRIMARY_CTA_HREF,
   PRIMARY_CTA_LABEL,
-  SECONDARY_CTA_HREF,
-  SECONDARY_CTA_LABEL,
 } from "@/lib/cta";
 
 const serviceIcons: Record<string, LucideIcon> = {
@@ -38,115 +31,10 @@ const serviceIcons: Record<string, LucideIcon> = {
   Briefcase,
 };
 
-const heroHighlights = [
-  { id: 1, title: "Certified Professionals", description: "Experienced & qualified", icon: BadgeCheck },
-  { id: 2, title: "Accurate & Timely Reporting", description: "You can rely on", icon: Target },
-  { id: 3, title: "Tailored Business Solutions", description: "Built around you", icon: Users },
-  { id: 4, title: "Confidential & Reliable Service", description: "Your data is safe", icon: LockKeyhole },
-];
-
 export default function Home() {
   return (
     <PageShell>
-      <section className="section-space-compact overflow-hidden bg-[#f8fafc]">
-        <div className="site-shell">
-          <div className="site-shell-inner">
-            <div className="surface-card overflow-hidden shadow-[0_24px_70px_rgba(15,23,42,0.12)]">
-              <div className="grid xl:grid-cols-[1.12fr_0.88fr]">
-                <div className="relative px-5 py-8 sm:px-8 sm:py-10 md:px-10 md:py-12 lg:px-12 lg:py-14 xl:px-14 xl:py-16">
-                  <p className="mb-4 text-xs font-semibold uppercase tracking-[0.16em] text-[#d4af37] sm:text-sm">
-                    Outsourcing beyond borders
-                  </p>
-                  <h1 className="text-[1.85rem] font-bold leading-[1.08] text-[#0f172a] sm:text-[2.2rem] md:text-[2.5rem] lg:text-[2.85rem]">
-                    Professional Fractional CFO, accounting and audit support services
-                    tailored to your business needs.
-                  </h1>
-                  <p className="mt-5 max-w-2xl text-base leading-8 text-[#475569] sm:text-lg">
-                    We provide accurate, reliable and result-driven financial solutions to
-                    help your business grow with confidence.
-                  </p>
-                  <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
-                    <Link href={PRIMARY_CTA_HREF}>
-                      <Button
-                        size="lg"
-                        className="h-12 w-full rounded-xl px-6 text-sm font-semibold shadow-[0_16px_30px_rgba(15,23,42,0.16)] sm:h-14 sm:w-auto sm:px-7 sm:text-base"
-                        style={{ backgroundColor: "#0F172A", color: "#F8FAFC" }}
-                      >
-                        <CalendarDays className="mr-2 h-5 w-5" />
-                        {PRIMARY_CTA_LABEL}
-                      </Button>
-                    </Link>
-                    <Link href={SECONDARY_CTA_HREF}>
-                      <Button
-                        size="lg"
-                        variant="outline"
-                        className="h-12 w-full rounded-xl border-[#cbd5e1] bg-white px-6 text-sm font-semibold hover:bg-[#f8fafc] sm:h-14 sm:w-auto sm:px-7 sm:text-base"
-                        style={{ color: "#0F172A" }}
-                      >
-                        {SECONDARY_CTA_LABEL}
-                        <ArrowRight className="ml-2 h-5 w-5" />
-                      </Button>
-                    </Link>
-                  </div>
-                </div>
-
-                <div className="relative min-h-[320px] overflow-hidden sm:min-h-[420px] lg:min-h-[520px] xl:min-h-[600px]">
-                  <Image
-                    src="/hero.png"
-                    alt="Professional finance workspace with accounting reports and analytics dashboard"
-                    fill
-                    priority
-                    sizes="(max-width: 1279px) 100vw, 44vw"
-                    className="object-cover object-center"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-l from-[#0f172a]/70 via-[#0f172a]/20 to-transparent" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#0f172a]/45 via-transparent to-transparent" />
-                  <div className="absolute left-0 top-0 h-full w-16 bg-gradient-to-r from-white via-white/90 to-transparent sm:w-20 lg:w-28" />
-                </div>
-              </div>
-
-              <div className="px-4 pb-4 sm:px-6 sm:pb-6 lg:px-8 lg:pb-8">
-                <div className="relative -mt-2 space-y-4 sm:-mt-4 lg:-mt-8">
-                  <div className="grid gap-3 rounded-[22px] border border-[#e2e8f0] bg-white p-4 shadow-[0_20px_55px_rgba(15,23,42,0.08)] sm:grid-cols-2 sm:gap-4 sm:p-5 xl:grid-cols-4 xl:p-6">
-                    {heroHighlights.map((item, index) => {
-                      const Icon = item.icon;
-                      return (
-                        <div
-                          key={item.id}
-                          className={`flex items-start gap-3 ${index < heroHighlights.length - 1 ? "xl:border-r xl:border-[#e2e8f0] xl:pr-5" : ""}`}
-                        >
-                          <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-xl bg-[#fff8e1]">
-                            <Icon className="h-6 w-6 text-[#0f172a]" />
-                          </div>
-                          <div>
-                            <div className="text-base font-semibold text-[#0f172a]">{item.title}</div>
-                            <div className="mt-1 text-sm text-[#64748b]">{item.description}</div>
-                          </div>
-                        </div>
-                      );
-                    })}
-                  </div>
-
-                  <div className="grid gap-4 rounded-[22px] bg-[#0f172a] px-5 py-5 text-[#f8fafc] shadow-[0_24px_60px_rgba(15,23,42,0.18)] sm:grid-cols-2 sm:px-6 sm:py-6 lg:px-8">
-                    {homeStats.map((stat, index) => (
-                      <div
-                        key={stat.id}
-                        className={`flex items-start gap-4 ${index === 0 ? "sm:border-r sm:border-white/12 sm:pr-6" : ""}`}
-                      >
-                        <div className="text-3xl font-bold text-[#d4af37] lg:text-4xl">{stat.value}</div>
-                        <div>
-                          <div className="text-lg font-semibold text-white">{stat.title}</div>
-                          <div className="mt-1 text-sm text-white/72">{stat.subtitle}</div>
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      <HomeHero />
 
       <section className="section-space-compact bg-[#f8fafc]">
         <div className="site-shell">

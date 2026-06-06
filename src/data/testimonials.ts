@@ -31,5 +31,6 @@ export const stats = [
 
 export const homeStats = [
   { id: 1, value: "5+", title: "Years of Experience", subtitle: "Delivering excellence" },
-  { id: 2, value: "10+", title: "Professionals", subtitle: "Qualified finance experts" },
+  { id: 2, value: "500+", title: "Satisfied Clients", subtitle: "Trusted partnerships" },
+  { id: 3, value: "500+", title: "Projects Completed", subtitle: "Successfully delivered" },
 ];
