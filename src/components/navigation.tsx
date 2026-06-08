@@ -79,7 +79,7 @@ export function Navigation() {
       style={{ backgroundColor: "#0F172A" }}
     >
       <div className="site-shell">
-        <div className="site-shell-inner flex h-16 items-center justify-between gap-4 sm:h-20">
+        <div className="site-shell-inner flex h-16 items-center justify-between gap-4 sm:h-[4.25rem]">
           <Link
             href="/"
             aria-label={`${SITE_NAME} home`}

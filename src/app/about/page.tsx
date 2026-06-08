@@ -168,7 +168,7 @@ export default function AboutPage() {
               <CardContent className="grid gap-8 p-6 sm:p-8 lg:grid-cols-[280px_1fr] lg:gap-10">
                 <div className="relative mx-auto aspect-[4/5] w-full max-w-[280px] overflow-hidden rounded-[24px] bg-[#f1f5f9] lg:mx-0">
                   <Image
-                    src="/founder-hamza.jpeg"
+                    src="/founder-hamza.png"
                     alt="Hamza Sheikh, Founder and CEO of HVB Solutions"
                     fill
                     className="object-cover object-top"
