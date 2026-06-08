@@ -95,10 +95,11 @@ export default function ContactPage() {
     <PageShell>
       <section className="section-space-tight bg-[radial-gradient(circle_at_top_left,_rgba(212,175,55,0.14),_transparent_20%),linear-gradient(135deg,_rgba(15,23,42,0.06),_white_40%,_rgba(248,250,252,0.96)_100%)]">
         <div className="site-shell">
-          <div className="site-shell-inner max-w-2xl">
+          <div className="site-shell-inner mx-auto max-w-3xl text-center">
             <h1 className="mb-3 text-3xl font-bold text-[#0f172a] sm:text-4xl">Contact HVB Solutions</h1>
-            <p className="text-base leading-7 text-[#5b6678]">
-              Get in touch for a free consultation on outsourced CFO, accounting, and audit support.
+            <p className="mx-auto max-w-2xl text-base leading-7 text-[#5b6678]">
+              Get in touch for a free consultation on outsourced CFO, accounting, and audit support
+              services.
             </p>
           </div>
         </div>

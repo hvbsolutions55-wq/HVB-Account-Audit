@@ -11,7 +11,7 @@ export function Footer() {
       <div className="site-shell py-12 sm:py-14">
         <div className="site-shell-inner">
           <div className="grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-[1.2fr_0.9fr_0.9fr_1fr]">
-            <div className="max-w-sm">
+            <div className="max-w-md">
               <Link href="/" className="mb-4 inline-flex">
                 <BrandLogo variant="full" />
               </Link>

@@ -1,6 +1,6 @@
 import { cn } from "@/lib/utils";
 
-const MARK_SRC = "/arrow-how-it-work.png";
+const MARK_SRC = "/work-arrow.png";
 
 type ProcessMarkProps = {
   className?: string;
@@ -8,7 +8,7 @@ type ProcessMarkProps = {
 
 /** Central process graphic — transparent gold mark for light section backgrounds */
 export function ProcessMark({
-  className = "h-36 w-auto sm:h-44 md:h-48 lg:h-52 xl:h-60",
+  className = "h-44 w-auto sm:h-52 md:h-60 lg:h-72 xl:h-80",
 }: ProcessMarkProps) {
   return (
     // eslint-disable-next-line @next/next/no-img-element

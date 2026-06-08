@@ -15,10 +15,10 @@ function ProcessStepBlock({
       <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-[#b88b16] sm:text-xs">
         Step {step.id}
       </p>
-      <h3 className="mt-2 text-lg font-bold text-[#0f172a] sm:text-xl lg:text-2xl">
+      <h3 className="mt-2 text-lg font-bold text-[#0f172a] sm:text-xl lg:text-xl xl:text-2xl">
         {step.title}
       </h3>
-      <p className="mt-2 text-sm leading-6 text-[#5b6678] sm:mt-3 sm:text-base sm:leading-7">
+      <p className="mt-2 text-sm leading-6 text-[#5b6678] sm:mt-3 sm:text-base sm:leading-7 lg:text-[0.9375rem] lg:leading-6 xl:text-base xl:leading-7">
         {step.description}
       </p>
     </article>
@@ -56,27 +56,45 @@ export function HowItWorksProcess({ showHeader = true, compact = false }: HowItW
       )}
 
       <div className="rounded-[20px] border border-[#e2e8f0] bg-white/70 p-4 shadow-[0_20px_55px_rgba(15,23,42,0.08)] sm:rounded-[24px] sm:p-6 md:p-8 lg:rounded-[28px] lg:p-10 xl:p-12">
-        <div className="grid grid-cols-1 gap-6 sm:gap-8 lg:grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)] lg:grid-rows-[auto_auto_auto] lg:items-center lg:gap-x-6 xl:gap-x-12">
-          <ProcessStepBlock
-            step={step1}
-            className="order-2 lg:order-none lg:col-start-1 lg:row-start-1 lg:max-w-md lg:justify-self-end lg:self-end xl:max-w-lg"
-          />
+        {/* Mobile */}
+        <div className="flex flex-col items-center gap-6 sm:gap-8 lg:hidden">
+          <div className="flex items-center justify-center rounded-full bg-[radial-gradient(circle,_rgba(212,175,55,0.18)_0%,_transparent_68%)] p-4 sm:p-5">
+            <ProcessMark className="h-44 w-auto sm:h-52 md:h-60" />
+          </div>
+          <ProcessStepBlock step={step1} />
+          <ProcessStepBlock step={step2} className="text-center" />
+          <ProcessStepBlock step={step3} className="text-center" />
+        </div>
 
-          <div className="order-1 flex justify-center lg:order-none lg:col-start-2 lg:row-span-3 lg:row-start-1 lg:px-2 xl:px-4">
-            <div className="relative flex items-center justify-center rounded-full bg-[radial-gradient(circle,_rgba(212,175,55,0.18)_0%,_transparent_68%)] p-4 sm:p-5 lg:p-6 xl:p-8">
-              <ProcessMark />
+        {/*
+          Desktop triangle — matches work-arrow.png:
+            Step 1 (top arrow)
+          Step 3 ← LOGO → Step 2
+        */}
+        <div
+          className="hidden lg:-mt-2 lg:grid lg:grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)] lg:grid-rows-[auto_auto_auto] lg:items-start lg:gap-x-10 xl:gap-x-16 lg:gap-y-4 xl:gap-y-5 xl:-mt-3"
+          data-process-diagram
+        >
+          <div className="col-start-2 row-start-1 mb-3 w-full max-w-[19rem] justify-self-center text-center xl:mb-4 xl:max-w-[21rem]">
+            <ProcessStepBlock step={step1} />
+          </div>
+
+          <div
+            className="col-start-2 row-start-2 justify-self-center"
+            data-process-logo
+          >
+            <div className="flex items-center justify-center rounded-full bg-[radial-gradient(circle,_rgba(212,175,55,0.18)_0%,_transparent_68%)] p-5 xl:p-7">
+              <ProcessMark className="h-52 w-auto xl:h-60" />
             </div>
           </div>
 
-          <ProcessStepBlock
-            step={step2}
-            className="order-3 lg:order-none lg:col-start-3 lg:row-start-2 lg:max-w-md lg:justify-self-start lg:self-center lg:pl-1 xl:max-w-lg xl:pl-2"
-          />
+          <div className="col-start-1 row-start-3 -mt-12 w-full max-w-[18rem] translate-x-5 justify-self-end pr-1 text-center xl:-mt-16 xl:max-w-[20rem] xl:translate-x-6 xl:pr-3">
+            <ProcessStepBlock step={step3} />
+          </div>
 
-          <ProcessStepBlock
-            step={step3}
-            className="order-4 lg:order-none lg:col-start-1 lg:row-start-3 lg:max-w-md lg:justify-self-end lg:self-start lg:pt-1 xl:max-w-lg xl:pt-2"
-          />
+          <div className="col-start-3 row-start-3 -mt-12 w-full max-w-[18rem] justify-self-start pl-1 text-center xl:-mt-16 xl:max-w-[20rem] xl:pl-3">
+            <ProcessStepBlock step={step2} />
+          </div>
         </div>
       </div>
     </div>
