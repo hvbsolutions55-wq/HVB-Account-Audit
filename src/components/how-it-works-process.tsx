@@ -88,11 +88,11 @@ export function HowItWorksProcess({ showHeader = true, compact = false }: HowItW
             </div>
           </div>
 
-          <div className="col-start-1 row-start-3 -mt-4 w-full max-w-[18rem] translate-x-5 justify-self-end pr-1 text-center xl:-mt-5 xl:max-w-[20rem] xl:translate-x-6 xl:pr-3">
+          <div className="col-start-1 row-start-3 -mt-12 w-full max-w-[18rem] translate-x-5 justify-self-end pr-1 text-center xl:-mt-16 xl:max-w-[20rem] xl:translate-x-6 xl:pr-3">
             <ProcessStepBlock step={step3} />
           </div>
 
-          <div className="col-start-3 row-start-3 mt-3 w-full max-w-[18rem] justify-self-start pl-1 text-center xl:mt-4 xl:max-w-[20rem] xl:pl-3">
+          <div className="col-start-3 row-start-3 -mt-12 w-full max-w-[18rem] justify-self-start pl-1 text-center xl:-mt-16 xl:max-w-[20rem] xl:pl-3">
             <ProcessStepBlock step={step2} />
           </div>
         </div>
