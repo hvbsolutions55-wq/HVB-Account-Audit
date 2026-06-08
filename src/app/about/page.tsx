@@ -47,30 +47,32 @@ export default function AboutPage() {
               </h1>
               <p className="text-base leading-7 text-[#5b6678] xl:text-lg">
                 We partner with businesses to provide strategic financial leadership,
-                accounting expertise, corporate advisory, and audit support that drive
+                accounting expertise, corporate advisory, and audit support services that drive
                 sustainable growth and operational excellence.
               </p>
             </div>
-          </div>
-        </div>
-      </section>
 
-      <section className="section-space-compact bg-white">
-        <div className="site-shell">
-          <div className="site-shell-inner">
-            <Card className="overflow-hidden rounded-[30px] border-0 bg-[#0f172a] text-white">
-              <CardContent className="grid gap-6 px-6 py-8 sm:grid-cols-2 lg:grid-cols-4 sm:px-8 lg:px-10">
-                {stats.map((stat, index) => (
-                  <div
-                    key={stat.id}
-                    className={index < stats.length - 1 ? "lg:border-r lg:border-white/10 lg:pr-6" : ""}
-                  >
-                    <div className="text-3xl font-bold text-[#d4af37] sm:text-4xl">{stat.value}</div>
-                    <div className="mt-2 text-sm font-semibold uppercase tracking-[0.14em] text-white/70">
-                      {stat.label}
+            <Card className="mt-6 overflow-hidden rounded-[30px] border-0 bg-[#0f172a] text-white sm:mt-8">
+              <CardContent className="px-6 py-8 sm:px-10 sm:py-10 lg:py-12">
+                <div className="mx-auto flex w-full max-w-xl flex-col items-center justify-center gap-8 sm:max-w-2xl sm:flex-row sm:gap-0 lg:max-w-3xl">
+                  {stats.map((stat, index) => (
+                    <div
+                      key={stat.id}
+                      className={`flex flex-1 flex-col items-center text-center ${
+                        index < stats.length - 1
+                          ? "w-full border-b border-white/10 pb-8 sm:w-auto sm:border-b-0 sm:border-r sm:pb-0 sm:px-10 lg:px-16"
+                          : "sm:px-10 lg:px-16"
+                      }`}
+                    >
+                      <div className="text-3xl font-bold text-[#d4af37] sm:text-4xl lg:text-5xl">
+                        {stat.value}
+                      </div>
+                      <div className="mt-2 text-xs font-semibold uppercase tracking-[0.14em] text-white/70 sm:text-sm">
+                        {stat.label}
+                      </div>
                     </div>
-                  </div>
-                ))}
+                  ))}
+                </div>
               </CardContent>
             </Card>
           </div>
@@ -171,7 +173,7 @@ export default function AboutPage() {
                     src="/founder-hamza.png"
                     alt="Hamza Sheikh, Founder and CEO of HVB Solutions"
                     fill
-                    className="object-cover object-top"
+                    className="object-cover object-center"
                     sizes="280px"
                   />
                 </div>
@@ -230,7 +232,7 @@ export default function AboutPage() {
             <Card className="overflow-hidden rounded-[30px] border-0 bg-gradient-to-r from-[#0f172a] to-[#1e293b] text-white">
               <CardContent className="px-6 py-10 text-center sm:px-8 lg:py-12">
                 <h2 className="text-3xl font-bold sm:text-4xl">
-                  Ready to work with a dependable finance partner?
+                  Ready to work with a trusted finance partner?
                 </h2>
                 <Link href={PRIMARY_CTA_HREF}>
                   <Button

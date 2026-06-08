@@ -54,9 +54,9 @@ export function HomeHero() {
                   Professional · Trustworthy · Reliable
                 </p>
                 <h1 className="relative max-w-[32rem] text-[1.85rem] font-bold leading-[1.1] text-[#0f172a] sm:text-[2.2rem] md:text-[2.45rem] lg:max-w-[30rem] lg:text-[2.75rem] xl:max-w-[32rem]">
-                  Professional Fractional CFO, accounting and{" "}
-                  <span className="text-[#d4af37]">audit support services</span> tailored to your
-                  business needs.
+                  Professional Fractional CFO, Accounting, and{" "}
+                  <span className="text-[#d4af37]">Audit Support Services</span> Tailored to Your
+                  Business Needs
                 </h1>
                 <p className="relative mt-5 max-w-xl text-base leading-8 text-[#5b6678] sm:text-lg">
                   We provide accurate, reliable and result-driven financial solutions to help your

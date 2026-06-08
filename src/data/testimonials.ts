@@ -24,9 +24,7 @@ export const testimonials = [
 
 export const stats = [
   { id: 1, label: "Years Experience", value: "5+" },
-  { id: 2, label: "Happy Clients", value: "500+" },
-  { id: 3, label: "Projects Completed", value: "500+" },
-  { id: 4, label: "Team Members", value: "25+" },
+  { id: 2, label: "Team Members", value: "10+" },
 ];
 
 export const homeStats = [

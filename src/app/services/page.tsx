@@ -1,6 +1,4 @@
-import Link from "next/link";
 import {
-  ArrowRight,
   Briefcase,
   Building2,
   Calculator,
@@ -10,12 +8,10 @@ import {
   ShieldCheck,
   type LucideIcon,
 } from "lucide-react";
-import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { PageShell } from "@/components/page-shell";
 import { services } from "@/data/services";
 import { SERVICES_INTRO } from "@/lib/site";
-import { PRIMARY_CTA_HREF, PRIMARY_CTA_LABEL } from "@/lib/cta";
 
 const serviceIcons: Record<string, LucideIcon> = {
   LineChart,
@@ -81,48 +77,11 @@ export default function ServicesPage() {
                           </li>
                         ))}
                       </ul>
-                      <div className="mt-6 border-t border-[#e5ebf2] pt-5">
-                        <Link href={PRIMARY_CTA_HREF}>
-                          <Button
-                            variant="outline"
-                            className="h-11 rounded-xl border-[#cfd8e3] px-5 text-sm font-semibold"
-                          >
-                            {PRIMARY_CTA_LABEL}
-                            <ArrowRight className="ml-2 h-4 w-4" />
-                          </Button>
-                        </Link>
-                      </div>
                     </CardContent>
                   </Card>
                 </div>
               );
             })}
-          </div>
-        </div>
-      </section>
-
-      <section className="section-space-tight bg-white">
-        <div className="site-shell">
-          <div className="site-shell-inner">
-            <Card className="overflow-hidden rounded-[30px] border-0 bg-gradient-to-r from-[#0f172a] via-[#111c34] to-[#1e293b] text-white">
-              <CardContent className="px-6 py-10 text-center sm:px-8 lg:py-12">
-                <h2 className="text-3xl font-bold sm:text-4xl">Need a Custom Solution?</h2>
-                <p className="mx-auto mt-4 max-w-2xl text-base leading-7 text-white/72">
-                  We tailor engagements to your reporting requirements, growth stage, and
-                  internal finance needs.
-                </p>
-                <Link href={PRIMARY_CTA_HREF}>
-                  <Button
-                    size="lg"
-                    className="mt-8 h-12 rounded-xl px-6 font-semibold"
-                    style={{ backgroundColor: "#D4AF37", color: "#0F172A" }}
-                  >
-                    {PRIMARY_CTA_LABEL}
-                    <ArrowRight className="ml-2 h-4 w-4" />
-                  </Button>
-                </Link>
-              </CardContent>
-            </Card>
           </div>
         </div>
       </section>
