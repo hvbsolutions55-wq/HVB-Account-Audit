@@ -48,17 +48,10 @@ export default async function CareersPage() {
                   <Briefcase className="h-7 w-7" />
                 </div>
                 <h2 className="mt-5 text-2xl font-bold text-[#0f172a]">
-                  Sanity setup required before publishing jobs
+                  Careers content coming soon
                 </h2>
                 <p className="mx-auto mt-3 max-w-2xl text-base leading-7 text-[#5b6678]">
-                  Add your Sanity project ID and dataset to the environment variables, then open{" "}
-                  <Link
-                    href="/studio"
-                    className="font-semibold text-[#0f172a] underline decoration-[#d4af37] underline-offset-4"
-                  >
-                    Sanity Studio
-                  </Link>{" "}
-                  to create job openings.
+                  Open roles will appear here when available. Please check back soon.
                 </p>
               </div>
             ) : jobs.length === 0 ? (
@@ -70,14 +63,8 @@ export default async function CareersPage() {
                   No open positions right now
                 </h2>
                 <p className="mx-auto mt-3 max-w-2xl text-base leading-7 text-[#5b6678]">
-                  New roles will appear here when published in{" "}
-                  <Link
-                    href="/studio"
-                    className="font-semibold text-[#0f172a] underline decoration-[#d4af37] underline-offset-4"
-                  >
-                    Sanity Studio
-                  </Link>
-                  . You can still reach out for future opportunities.
+                  New roles will appear here when they become available. You can still reach out
+                  for future opportunities.
                 </p>
                 <div className="mt-6">
                   <Link href={PRIMARY_CTA_HREF}>

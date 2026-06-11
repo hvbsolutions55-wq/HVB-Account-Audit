@@ -43,8 +43,8 @@ export default async function BlogPage() {
                   Blog
                 </h1>
                 <p className="max-w-2xl text-base leading-7 text-[#5b6678] xl:text-lg">
-                  A standard article template for financial insights. Publish new posts anytime
-                  via Sanity Studio at <Link href="/studio" className="font-semibold text-[#0f172a] underline decoration-[#d4af37] underline-offset-4">/studio</Link>.
+                  Practical insights on accounting, audit, tax, and financial operations from the
+                  HVB Solutions team.
                 </p>
               </div>
             </div>
@@ -60,12 +60,10 @@ export default async function BlogPage() {
                     <BookOpenText className="h-7 w-7" />
                   </div>
                   <h2 className="mt-5 text-2xl font-bold text-[#0f172a]">
-                    Sanity setup required before publishing
+                    Blog content coming soon
                   </h2>
                   <p className="mx-auto mt-3 max-w-2xl text-base leading-7 text-[#5b6678]">
-                    Add your Sanity project ID and dataset to the environment
-                    variables, then open the Studio at <code>/studio</code> to
-                    create posts, categories, and authors.
+                    New articles will appear here as they are published. Please check back soon.
                   </p>
                 </div>
               ) : posts.length === 0 ? (
@@ -77,11 +75,7 @@ export default async function BlogPage() {
                     No blog posts published yet
                   </h2>
                   <p className="mx-auto mt-3 max-w-2xl text-base leading-7 text-[#5b6678]">
-                    Create your first article in{" "}
-                    <Link href="/studio" className="font-semibold text-[#0f172a] underline decoration-[#d4af37] underline-offset-4">
-                      Sanity Studio
-                    </Link>{" "}
-                    and it will appear here automatically.
+                    New articles will appear here as they are published. Please check back soon.
                   </p>
                 </div>
               ) : (
