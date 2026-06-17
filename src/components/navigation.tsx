@@ -83,9 +83,10 @@ export function Navigation() {
           <Link
             href="/"
             aria-label={`${SITE_NAME} home`}
-            className="flex min-w-0 shrink-0 items-center"
+            className="flex min-w-0 shrink-0 items-center mt-2 sm:mt-2"
+            
           >
-            <BrandLogo variant="nav" priority />
+            <BrandLogo variant="full" priority />
           </Link>
 
           <nav className="hidden items-center gap-6 md:flex lg:gap-8">

@@ -26,7 +26,7 @@ export function BrandLogo({
       fetchPriority={priority ? "high" : "auto"}
       className={cn(
         "block h-auto w-auto shrink-0 object-contain object-left",
-        isNav ? "h-11 w-auto sm:h-12" : "h-14 w-auto sm:h-16",
+       isNav ? "h-11 w-auto sm:h-12" : "h-20 w-auto sm:h-24",
         className,
       )}
     />

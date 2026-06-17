@@ -141,7 +141,7 @@ export function HomeHero() {
                   })}
                 </div>
 
-                <div className="grid gap-5 rounded-[22px] bg-[#0f172a] px-5 py-6 text-[#f8fafc] shadow-[0_24px_60px_rgba(15,23,42,0.18)] sm:grid-cols-3 sm:px-8 sm:py-7">
+                <div className="grid gap-5 rounded-[22px] bg-[#0f172a] px-5 py-6 text-[#f8fafc] shadow-[0_24px_60px_rgba(15,23,42,0.18)] sm:grid-cols-2 sm:px-8 sm:py-7 sm:justify-items-center">
                   {homeStats.map((stat, index) => {
                     const Icon = statIcons[index] ?? Award;
                     return (

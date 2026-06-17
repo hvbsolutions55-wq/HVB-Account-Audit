@@ -5,6 +5,8 @@ export type Service = {
   description: string;
   icon: string;
   details: string[];
+   image?: string; 
+  imageAlt?: string;
 };
 
 export const services: Service[] = [
@@ -15,6 +17,8 @@ export const services: Service[] = [
     description:
       "Strategic financial leadership without the cost of a full-time CFO.",
     icon: "LineChart",
+     image: "/CFO.PNG", // Add your image path
+    imageAlt: "Fractional CFO services illustration",
     details: [
       "Budgeting & Forecasting",
       "Financial Planning & Analysis",
@@ -31,6 +35,8 @@ export const services: Service[] = [
     description:
       "Expert support for financial reporting, controls, and accounting processes.",
     icon: "ClipboardList",
+    image: "/Cor.PNG", // Add your image path
+    imageAlt: "Controller & Accounting Advisory",
     details: [
       "Month-End Close",
       "Audit Preparation",
@@ -50,6 +56,8 @@ export const services: Service[] = [
     description:
       "Efficient accounting and operational support for your daily business needs.",
     icon: "Calculator",
+     image: "/Staff.PNG", // Add your image path
+    imageAlt: "Staff Accountant & Financial Operations",
     details: [
       "Bookkeeping",
       "Bank Reconciliations",
@@ -69,6 +77,8 @@ export const services: Service[] = [
     description:
       "Professional assistance with corporate compliance and administration.",
     icon: "Building2",
+    image: "/CO.png", 
+    imageAlt: "Corporate Services",
     details: [
       "Drafting Board Meeting Minutes",
       "Drafting Shareholder Resolutions",
@@ -88,6 +98,8 @@ export const services: Service[] = [
     description:
       "End-to-end support for audit preparation and compliance requirements.",
     icon: "ShieldCheck",
+    image: "/Audit.png",
+    imageAlt: "Audit Support Services",
     details: [
       "Audit Working Paper Preparation",
       "Lead Schedule Preparation",
@@ -111,6 +123,8 @@ export const services: Service[] = [
     description:
       "Strategic advice to help your business grow and stay tax compliant.",
     icon: "Briefcase",
+    image: "/Bus.PNG", // Add your image path
+    imageAlt: "Business Advisory & Tax Consulting",
     details: [
       "Accounting Software Implementation",
       "Preparation of Corporate Tax Returns",
