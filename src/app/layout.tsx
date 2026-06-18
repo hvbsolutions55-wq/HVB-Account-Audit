@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 
+import TawkChat from "@/components/TawkChat";
+
 const inter = Inter({
   subsets: ["latin"],
   variable: "--font-sans",
@@ -37,6 +39,7 @@ export default function RootLayout({
     <html lang="en" className={inter.variable} suppressHydrationWarning>
       <body className="min-h-full flex flex-col antialiased" suppressHydrationWarning>
         {children}
+        <TawkChat/>
       </body>
     </html>
   );
