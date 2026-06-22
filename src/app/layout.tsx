@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
 
 import TawkChat from "@/components/TawkChat";
@@ -38,8 +39,13 @@ export default function RootLayout({
   return (
     <html lang="en" className={inter.variable} suppressHydrationWarning>
       <body className="min-h-full flex flex-col antialiased" suppressHydrationWarning>
+        {process.env.NODE_ENV === "development" ? (
+          <Script id="suppress-tawk-console-noise" strategy="beforeInteractive">
+            {`(function(){var original=console.error;console.error=function(){if(arguments.length===1&&arguments[0]===true)return;original.apply(console,arguments);};})();`}
+          </Script>
+        ) : null}
         {children}
-        <TawkChat/>
+        <TawkChat />
       </body>
     </html>
   );

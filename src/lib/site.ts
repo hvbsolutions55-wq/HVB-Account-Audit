@@ -12,7 +12,7 @@ export const WHATSAPP_URL = `https://api.whatsapp.com/send?phone=${WHATSAPP_NUMB
 
 export const PROMO_HEADLINE =
   "Start Outsourcing Financial & Accounting Support from";
-export const PROMO_RATE = "€10";
+export const PROMO_RATE_EUR = 10;
 export const PROMO_RATE_SUFFIX = "per Hour";
 
 export const SERVICES_INTRO =
