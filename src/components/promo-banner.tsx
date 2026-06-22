@@ -1,9 +1,6 @@
 import Link from "next/link";
-import {
-  PROMO_HEADLINE,
-  PROMO_RATE,
-  PROMO_RATE_SUFFIX,
-} from "@/lib/site";
+import { PromoRateDisplay } from "@/components/promo-rate-display";
+import { PROMO_HEADLINE, PROMO_RATE_SUFFIX } from "@/lib/site";
 import { PRIMARY_CTA_HREF, PRIMARY_CTA_LABEL } from "@/lib/cta";
 
 export function PromoBanner() {
@@ -12,7 +9,7 @@ export function PromoBanner() {
       <div className="site-shell py-2.5">
         <div className="site-shell-inner flex flex-wrap items-center justify-center gap-x-2 gap-y-1 px-2">
           <span className="text-white/90">{PROMO_HEADLINE}</span>
-          <span className="promo-blink font-bold text-[#d4af37]">{PROMO_RATE}</span>
+          <PromoRateDisplay />
           <span className="text-white/90">{PROMO_RATE_SUFFIX}</span>
           <Link
             href={PRIMARY_CTA_HREF}
