@@ -24,11 +24,11 @@ export const testimonials = [
 
 export const stats = [
   { id: 1, label: "Years Experience", value: "5+" },
-  { id: 2, label: "Team Members", value: "10+" },
+  { id: 2, label: "Team Members", value: "25+" },
 ];
 
 export const homeStats = [
   { id: 1, value: "5+", title: "Years of Experience", subtitle: "Delivering excellence" },
-  { id: 2, value: "10+", title: "Team Members", subtitle: "Trusted partnerships" },
+  { id: 2, value: "25+", title: "Team Members", subtitle: "Trusted partnerships" },
   
 ];
