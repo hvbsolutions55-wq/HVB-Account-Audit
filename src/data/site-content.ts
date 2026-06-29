@@ -1,7 +1,7 @@
 /** Copy aligned with HVB Solutions (Autosaved).xlsx */
 
 export const homeServicesIntro =
-  "End-to-end financial services tailored to help businesses grow with confidence. From audit and tax consulting to strategic advisory, we provide customized solutions and expert insight to support your evolving business needs.";
+  "End-to-end financial services tailored to help businesses grow with confidence. We provide customized solutions and expert insight to support your evolving business needs.";
 
 export const homeIntroParagraphs = [
   "We are a full-service financial consulting firm delivering scalable accounting and finance solutions tailored to support businesses at every stage of growth.",
