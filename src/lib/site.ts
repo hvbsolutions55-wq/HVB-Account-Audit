@@ -7,7 +7,7 @@ export const CONTACT_PHONE_HREF = "tel:+352621769247";
 
 export const WHATSAPP_NUMBER = "352621769247";
 export const WHATSAPP_MESSAGE =
-  "Hello HVB Solutions, I would like to discuss your services.";
+  "Hello HVB Outsourcing, I would like to discuss your services.";
 export const WHATSAPP_URL = `https://api.whatsapp.com/send?phone=${WHATSAPP_NUMBER}&text=${encodeURIComponent(WHATSAPP_MESSAGE)}`;
 
 export const PROMO_HEADLINE =

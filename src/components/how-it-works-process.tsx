@@ -47,7 +47,7 @@ export function HowItWorksProcess({ showHeader = true, compact = false }: HowItW
                 : "text-2xl font-bold text-[#0f172a] sm:text-3xl md:text-4xl lg:text-5xl"
             }
           >
-            How HVB Solutions Work
+            How HVB Outsourcing Work
           </h2>
           <p className="mx-auto mt-3 max-w-2xl text-sm leading-6 text-[#5b6678] sm:mt-4 sm:text-base sm:leading-7 md:mt-5 md:text-lg md:leading-8">
             {processIntro}

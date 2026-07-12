@@ -43,7 +43,7 @@ export default function AboutPage() {
           <div className="site-shell-inner">
             <div className="max-w-3xl">
               <h1 className="mb-4 text-3xl font-bold tracking-tight text-[#0f172a] sm:text-4xl xl:text-[2.8rem]">
-                About HVB Solutions
+                About HVB Outsourcing
               </h1>
               <p className="text-base leading-7 text-[#5b6678] xl:text-lg">
                 We partner with businesses to provide strategic financial leadership,

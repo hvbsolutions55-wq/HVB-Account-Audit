@@ -9,9 +9,9 @@ import { isSanityConfigured } from "@/sanity/env";
 import { PRIMARY_CTA_HREF, PRIMARY_CTA_LABEL } from "@/lib/cta";
 
 export const metadata: Metadata = {
-  title: "Careers | HVB Solutions",
+  title: "Careers | HVB Outsourcing",
   description:
-    "Join HVB Solutions — outsourced finance, accounting, and audit support roles.",
+    "Join HVB Outsourcing — outsourced finance, accounting, and audit support roles.",
 };
 
 export const revalidate = 300;
@@ -29,7 +29,7 @@ export default async function CareersPage() {
               Careers
             </div>
             <h1 className="mb-4 text-3xl font-bold text-[#0f172a] sm:text-4xl">
-              Work With HVB Solutions
+              Work With HVB Outsourcing
             </h1>
             <p className="text-base leading-7 text-[#5b6678]">
               We are building a team of finance, accounting, and audit professionals who deliver
