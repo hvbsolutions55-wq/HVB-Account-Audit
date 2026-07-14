@@ -1,6 +1,6 @@
 /** @type {import('next-sitemap').IConfig} */
 module.exports = {
-  siteUrl: 'https://hvboutsourcing.com',
+  siteUrl: process.env.NEXT_PUBLIC_SITE_URL || 'https://hvboutsourcing.com',
   generateRobotsTxt: true,
-  outDir: 'public', // ✅ Explicitly set karein
+  // outDir: 'public',  // by default public hi hota hai
 }
