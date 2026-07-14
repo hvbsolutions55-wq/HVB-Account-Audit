@@ -1,10 +1,6 @@
+/** @type {import('next-sitemap').IConfig} */
 module.exports = {
-  siteUrl: 'https://hvboutsourcing.com', // ✅ YAHAN CHANGE KAREIN
+  siteUrl: 'https://hvboutsourcing.com',
   generateRobotsTxt: true,
-  robotsTxtOptions: {
-    policies: [
-      { userAgent: '*', allow: '/' }
-    ]
-  },
-  exclude: ['/admin/*', '/private/*'], // Agar koi private pages hain toh
+  outDir: 'public', // ✅ Explicitly set karein
 }
