@@ -11,18 +11,18 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "HVB Solutions | Fractional CFO, Accounting & Audit Support",
+  title: "HVB OutSourcing | Fractional CFO, Accounting & Audit Support",
   description:
     "Professional fractional CFO, accounting and audit support services tailored to your business needs. Accurate, reliable, and result-driven outsourced finance expertise.",
   keywords: [
-    "HVB Solutions",
+    "HVB OutSourcing",
     "fractional CFO",
     "outsourced accounting",
     "audit support",
     "corporate services",
     "controller advisory",
   ],
-  authors: [{ name: "HVB Solutions" }],
+  authors: [{ name: "HVB OutSourcing" }],
   openGraph: {
     title: "HVB OutSourcing | Fractional CFO, Accounting & Audit Support",
     description:
