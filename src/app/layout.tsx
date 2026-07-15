@@ -24,7 +24,7 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: "HVB Solutions" }],
   openGraph: {
-    title: "HVB Solutions | Fractional CFO, Accounting & Audit Support",
+    title: "HVB OutSourcing | Fractional CFO, Accounting & Audit Support",
     description:
       "Professional fractional CFO, accounting and audit support services tailored to your business needs. Outsourcing beyond borders.",
     type: "website",
