@@ -117,7 +117,7 @@ export function Footer() {
           <Separator className="my-8 bg-white/10" />
 
           <div className="flex flex-col items-start justify-between gap-4 text-sm text-white/60 sm:flex-row sm:items-center">
-            <p>© {new Date().getFullYear()} HVB Solutions. All rights reserved.</p>
+            <p>© {new Date().getFullYear()} HVB OutSourcing. All rights reserved.</p>
             <div className="flex gap-6">
               <Link href="/privacy" className="transition-colors hover:text-white">
                 Privacy Policy
