@@ -87,7 +87,7 @@ export default function AboutPage() {
                 <p className="mb-2 text-sm font-semibold uppercase tracking-wide text-[#b88b16]">
                   You&apos;re In Good Company
                 </p>
-                <CardTitle className="text-3xl text-[#0f172a]">About HVB Solutions</CardTitle>
+                <CardTitle className="text-3xl text-[#0f172a]">About HVB OutSourcing</CardTitle>
               </CardHeader>
               <CardContent className="space-y-5 px-6 pb-8 text-base leading-8 text-[#5b6678] sm:px-8">
                 <p>
