@@ -183,7 +183,7 @@ export default function AboutPage() {
                     <p className="mt-1 font-medium text-[#b88b16]">Founder &amp; CEO — HVB OutSourcing</p>
                   </div>
                   <p>
-                    Hamza Sheikh is the Founder and Chief Executive Officer of HVB OutSourcing, a
+                    Hamza Sheikh is the Founder and Chief Executive Officer of HVB Outsourcing, a
                     professional virtual business solutions firm providing outsourced audit,
                     accounting, compliance, and corporate support services to clients across the
                     USA, UK, Europe, Australia, Canada, and the Middle East.
@@ -196,7 +196,7 @@ export default function AboutPage() {
                     services.
                   </p>
                   <p>
-                    Prior to founding HVB OutSourcing, Hamza Sheikh gained valuable experience
+                    Prior to founding HVB Outsourcing, Hamza Sheikh gained valuable experience
                     working with globally recognized firms including EY, PwC, and Grant Thornton.
                     Through these roles, he developed deep expertise in financial reporting,
                     external audit, risk assessment, compliance, internal controls, and business
@@ -210,7 +210,7 @@ export default function AboutPage() {
                   </p>
                   <p>{founderExtraParagraph}</p>
                   <p>
-                    Under his leadership, HVB OutSourcing has grown into a trusted outsourcing
+                    Under his leadership, HVB Outsourcing has grown into a trusted outsourcing
                     partner known for professionalism, confidentiality, accuracy, and timely
                     delivery.
                   </p>
