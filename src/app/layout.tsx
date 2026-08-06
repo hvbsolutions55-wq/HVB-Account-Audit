@@ -22,6 +22,13 @@ export const metadata: Metadata = {
     "corporate services",
     "controller advisory",
   ],
+   metadataBase: new URL("https://www.hvboutsourcing.com"),
+
+  icons: {
+    icon: "/Logo.png",
+    shortcut: "/Logo.png",
+    apple: "/Logo.png",
+  },
   authors: [{ name: "HVB OutSourcing" }],
   openGraph: {
     title: "HVB OutSourcing | Fractional CFO, Accounting & Audit Support",
