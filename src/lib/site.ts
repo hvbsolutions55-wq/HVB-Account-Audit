@@ -1,7 +1,7 @@
 export const SITE_NAME = "HVB Solutions";
 export const SITE_TAGLINE = "Outsourcing beyond borders";
 
-export const CONTACT_EMAIL = "info@hvb-solutions.com";
+export const CONTACT_EMAIL = "info@hvboutsourcing.com";
 export const CONTACT_PHONE = "+352 621 769 247";
 export const CONTACT_PHONE_HREF = "tel:+352621769247";
 
