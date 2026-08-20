@@ -1,4 +1,4 @@
-export const SITE_NAME = "HVB Solutions";
+export const SITE_NAME = "HVB Outsourcing";
 export const SITE_TAGLINE = "Outsourcing beyond borders";
 
 export const CONTACT_EMAIL = "info@hvboutsourcing.com";

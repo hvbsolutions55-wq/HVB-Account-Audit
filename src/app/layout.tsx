@@ -12,6 +12,10 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: "HVB OutSourcing | Fractional CFO, Accounting & Audit Support",
+  icons: {
+    icon: "../public/icon.png",
+    
+  },
   description:
     "Professional fractional CFO, accounting and audit support services tailored to your business needs. Accurate, reliable, and result-driven outsourced finance expertise.",
   keywords: [
