@@ -13,8 +13,7 @@ const inter = Inter({
 export const metadata: Metadata = {
   title: "HVB OutSourcing | Fractional CFO, Accounting & Audit Support",
   icons: {
-    icon: "../public/icon.png",
-    
+    icon: "/icon.png"  
   },
   description:
     "Professional fractional CFO, accounting and audit support services tailored to your business needs. Accurate, reliable, and result-driven outsourced finance expertise.",
@@ -28,11 +27,7 @@ export const metadata: Metadata = {
   ],
    metadataBase: new URL("https://www.hvboutsourcing.com"),
 
-  icons: {
-    icon: "/Logo.png",
-    shortcut: "/Logo.png",
-    apple: "/Logo.png",
-  },
+ 
   authors: [{ name: "HVB OutSourcing" }],
   openGraph: {
     title: "HVB OutSourcing | Fractional CFO, Accounting & Audit Support",
