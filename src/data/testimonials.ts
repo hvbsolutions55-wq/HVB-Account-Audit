@@ -4,7 +4,7 @@ export const testimonials = [
     name: "Sarah Johnson",
     role: "Tech Startup CEO",
     content:
-      "HVB Solutions transformed our bookkeeping process. Their virtual services are efficient, accurate, and have saved us countless hours.",
+      "HVB Outsourcing transformed our bookkeeping process. Their virtual services are efficient, accurate, and have saved us countless hours.",
   },
   {
     id: 2,

@@ -11,7 +11,7 @@ export default function TermsPage() {
           <div className="site-shell-inner max-w-2xl">
             <h1 className="mb-4 text-3xl font-bold text-[#0f172a] sm:text-4xl">Terms &amp; Conditions</h1>
             <p className="text-base leading-7 text-[#5b6678]">
-              Please read these terms carefully before using HVB Solutions&apos; website or
+              Please read these terms carefully before using HVB Outsourcing&apos; website or
               engaging with our services.
             </p>
           </div>
@@ -29,13 +29,13 @@ export default function TermsPage() {
               <div className="prose prose-lg max-w-none text-[#475569] prose-headings:text-[#0f172a]">
                 <h2>1. Acceptance of Terms</h2>
                 <p>
-                  By accessing or using HVB Solutions&apos; website and services, you agree to
+                  By accessing or using HVB Outsourcing&apos; website and services, you agree to
                   be bound by these Terms &amp; Conditions.
                 </p>
 
                 <h2>2. Use of Website Content</h2>
                 <p>
-                  The content on this website is the property of HVB Solutions or its content
+                  The content on this website is the property of HVB Outsourcing or its content
                   suppliers and is protected by applicable intellectual property laws.
                 </p>
 
@@ -48,20 +48,20 @@ export default function TermsPage() {
 
                 <h2>4. Limitation of Liability</h2>
                 <p>
-                  To the fullest extent permitted by law, HVB Solutions shall not be liable for
+                  To the fullest extent permitted by law, HVB Outsourcing shall not be liable for
                   indirect, incidental, special, consequential, or punitive damages arising from
                   use of the website or services.
                 </p>
 
                 <h2>5. Intellectual Property</h2>
                 <p>
-                  All materials on this website are the property of HVB Solutions or its content
+                  All materials on this website are the property of HVB Outsourcing or its content
                   suppliers and are protected by international copyright and trademark laws.
                 </p>
 
                 <h2>7. Changes to Terms</h2>
                 <p>
-                  HVB Solutions reserves the right to modify these terms at any time. Changes are
+                  HVB Outsourcing reserves the right to modify these terms at any time. Changes are
                   effective upon posting. Continued use constitutes acceptance of updated terms.
                 </p>
 

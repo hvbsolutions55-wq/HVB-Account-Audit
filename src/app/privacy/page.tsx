@@ -17,7 +17,7 @@ export default function PrivacyPage() {
                   Privacy Policy
                 </h1>
                 <p className="max-w-xl text-base leading-7 text-[#5b6678] xl:text-lg">
-                  This policy explains how HVB Solutions collects, uses, stores,
+                  This policy explains how HVB Outsourcing collects, uses, stores,
                   and protects the information you share with us.
                 </p>
               </div>
@@ -36,7 +36,7 @@ export default function PrivacyPage() {
                 <div className="prose prose-lg max-w-none text-[#475569] prose-headings:text-[#0f172a] prose-p:leading-8 prose-li:leading-8 prose-strong:text-[#0f172a]">
                   <h2>1. Information We Collect</h2>
                   <p>
-                    HVB Solutions collects information you provide directly to us
+                    HVB Outsourcing collects information you provide directly to us
                     when you use our services, including:
                   </p>
                   <ul>
@@ -131,7 +131,7 @@ export default function PrivacyPage() {
                     data practices, please contact us at:
                   </p>
                   <div className="mt-4 space-y-1 text-sm leading-7 text-[#0f172a] sm:text-[15px]">
-                    <p><strong>HVB Solutions</strong></p>
+                    <p><strong>HVB Outsourcing</strong></p>
                     <p>Email: {CONTACT_EMAIL}</p>
                     <p>Phone: {CONTACT_PHONE}</p>
                   </div>
