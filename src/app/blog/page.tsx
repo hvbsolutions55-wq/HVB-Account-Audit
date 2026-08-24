@@ -16,9 +16,9 @@ export const metadata: Metadata = {
     canonical: `${siteUrl}/blog`,
   },
   openGraph: {
-    title: "Blog | HVB Solutions",
+    title: "Blog | HVB Outsourcing",
     description:
-      "Insights on accounting, audit, tax, and financial operations from HVB Solutions.",
+      "Insights on accounting, audit, tax, and financial operations from HVB Outsourcing.",
     url: `${siteUrl}/blog`,
     type: "website",
   },
@@ -44,7 +44,7 @@ export default async function BlogPage() {
                 </h1>
                 <p className="max-w-2xl text-base leading-7 text-[#5b6678] xl:text-lg">
                   Practical insights on accounting, audit, tax, and financial operations from the
-                  HVB Solutions team.
+                  HVB Outsourcing team.
                 </p>
               </div>
             </div>
