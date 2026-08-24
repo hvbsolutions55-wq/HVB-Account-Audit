@@ -11,7 +11,7 @@ import { PRIMARY_CTA_HREF, PRIMARY_CTA_LABEL } from "@/lib/cta";
 export const metadata: Metadata = {
   title: "Blog | HVB Outsourcing",
   description:
-    "Insights on accounting, audit, tax, and financial operations from HVB Solutions.",
+    "Insights on accounting, audit, tax, and financial operations from HVB Outsourcing.",
   alternates: {
     canonical: `${siteUrl}/blog`,
   },
