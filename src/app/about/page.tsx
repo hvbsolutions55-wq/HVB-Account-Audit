@@ -180,7 +180,7 @@ export default function AboutPage() {
                 <div className="space-y-5 text-base leading-8 text-[#5b6678]">
                   <div>
                     <h3 className="text-2xl font-bold text-[#0f172a]">Hamza Sheikh</h3>
-                    <p className="mt-1 font-medium text-[#b88b16]">Founder &amp; CEO — HVB OutSourcing</p>
+                    <p className="mt-1 font-medium text-[#b88b16]">Founder &amp; CEO — HVB Outsourcing</p>
                   </div>
                   <p>
                     Hamza Sheikh is the Founder and Chief Executive Officer of HVB Outsourcing, a

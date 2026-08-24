@@ -9,7 +9,7 @@ import { isSanityConfigured, siteUrl } from "@/sanity/env";
 import { PRIMARY_CTA_HREF, PRIMARY_CTA_LABEL } from "@/lib/cta";
 
 export const metadata: Metadata = {
-  title: "Blog | HVB Solutions",
+  title: "Blog | HVB Outsourcing",
   description:
     "Insights on accounting, audit, tax, and financial operations from HVB Solutions.",
   alternates: {
