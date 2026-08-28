@@ -28,7 +28,6 @@ export const revalidate = 300;
 
 export default async function BlogPage() {
   const posts = await getAllPosts();
-  const [featuredPost, ...remainingPosts] = posts;
 
   return (
     <PageShell>
@@ -79,30 +78,17 @@ export default async function BlogPage() {
                   </p>
                 </div>
               ) : (
-                <div className="space-y-8">
-                  {featuredPost ? (
-                    <div>
-                      <div className="mb-5 inline-flex items-center rounded-full bg-white px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.14em] text-[#64748b] shadow-sm">
-                        Featured Article
-                      </div>
-                      <PostCard post={featuredPost} featured />
-                    </div>
-                  ) : null}
-
-                  {remainingPosts.length > 0 ? (
-                    <div>
-                      <div className="mb-6 flex items-center justify-between gap-4">
-                        <h2 className="text-2xl font-bold tracking-tight text-[#0f172a]">
-                          Latest Articles
-                        </h2>
-                      </div>
-                      <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
-                        {remainingPosts.map((post) => (
-                          <PostCard key={post._id} post={post} />
-                        ))}
-                      </div>
-                    </div>
-                  ) : null}
+                <div>
+                  <div className="mb-6 flex items-center justify-between gap-4">
+                    <h2 className="text-2xl font-bold tracking-tight text-[#0f172a]">
+                      Latest Articles
+                    </h2>
+                  </div>
+                  <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+                    {posts.map((post) => (
+                      <PostCard key={post._id} post={post} />
+                    ))}
+                  </div>
                 </div>
               )}
             </div>
