@@ -39,7 +39,7 @@ export default async function CareersPage() {
         </div>
       </section>
 
-      <section className="section-space bg-[#f8fafc]">
+      <section className="section-space !pt-0 bg-[#f8fafc]">
         <div className="site-shell">
           <div className="site-shell-inner">
             {!isSanityConfigured ? (
