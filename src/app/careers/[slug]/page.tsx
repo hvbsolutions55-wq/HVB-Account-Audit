@@ -123,7 +123,7 @@ export default async function JobPage({ params }: JobPageProps) {
         </div>
       </section>
 
-      <section className="section-space bg-white">
+      <section className="section-space !pt-0 bg-white">
         <div className="site-shell">
           <div className="site-shell-inner max-w-3xl">
             {job.excerpt ? (

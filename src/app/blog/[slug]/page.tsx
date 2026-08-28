@@ -139,7 +139,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
           </div>
         </section>
 
-        <section className="section-space bg-[#f8fafc]">
+        <section className="section-space !pt-0 bg-[#f8fafc]">
           <div className="site-shell">
             <div className="site-shell-inner">
               <div className="mx-auto max-w-4xl space-y-8">
